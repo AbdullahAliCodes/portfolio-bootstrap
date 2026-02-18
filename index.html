@@ -12,9 +12,9 @@
     <meta name="theme-color" content="#712cf9" />
     <link href="cover.css" rel="stylesheet" />
 
-    <title>Zaio Portfolio | Abdullah Ali</title>
+    <title>Portfolio | Abdullah Ali</title>
     
-    <style>
+    <!-- <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -87,10 +87,10 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
-    </style>
+    </style> -->
   </head>
   <body class="">
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path
           d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
@@ -184,33 +184,128 @@
           </button>
         </li>
       </ul>
-    </div>
-    <header class="p-5">
-      <div>
-        <h3 class="float-md-start mb-0">Zaio Portfolio</h3>
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a
-            class="nav-link fw-bold py-1 px-0 active"
-            aria-current="page"
-            href="#"
-            >Home</a
-          >
-          <a class="nav-link fw-bold py-1 px-0" href="#">Features</a>
-          <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
-        </nav>
-      </div>
-    </header>
+    </div> -->
+    
+    <!-- Header Section-->
     <div class= "banner-wrap vw-100 vh-100">
+      <div class="overlay"></div>
+      <!-- Nav Bar -->
+        <header class="px-5 p-3" text-white>
+          <div>
+            <h3 class="float-md-start text-center">Portfolio</h3>
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+              <a
+                class="nav-link fw-bold py-1 px-0 active"
+                aria-current="page"
+                href="#"
+                >Home
+                </a>
+              <a class="nav-link fw-bold py-1 px-0" href="#about-me">About me</a>
+              <a class="nav-link fw-bold py-1 px-0" href="#projects">Projects</a>
+            </nav>
+          </div>
+        </header>
+    <!-- Header Section Content -->
       <main class="d-flex flex-column align-items-center justify-content-center h-75 text-center">
         <h1 class="display-1">I am Abdullah Ali</h1>
         <p class="lead">
-          Student of the Game. Fullstack AI Developer. Tech Enthusiast.
+          Student. Fullstack AI Developer. Tech Enthusiast.
         </p>
       </main>
     </div>
 
-    <section class="container p-3">
-      <h1 class="text-center"><mark>Projects</mark></h1>
+    <!-- About Me Section -->
+    <section>
+      <div class="container p-5">
+        <div class="card">
+          <div class="card-body">
+            <div class="row p-3">
+              <div class="col-md-6 col-sm-12">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQH27d2whXhRvQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1691304126146?e=1773273600&v=beta&t=BkdNJ3AvnWN1fccRI94yxVS30m5IHyIdqdsOqzScuzs" class="img-fluid" alt="Profile Picture">
+                  </div> 
+                  <div class="col-md-7 mt-3">
+                    <p><strong>Name: Abdullah Ali</strong></p>
+                    <p><strong>Profile: Full Stack Developer</strong></p>
+                    <p><strong>Email: abdullahali.dullz@gmail.com</strong></p>
+                    <p><strong>Phone: 071 348 1347</strong></p>
+                    <p><strong>Skills:</strong>
+                      <span class="badge rounded-pill text-bg-light">HTML</span>
+                      <span class="badge rounded-pill text-bg-light">CSS</span>
+                      <span class="badge rounded-pill text-bg-light">JavaScript</span>
+                      <span class="badge rounded-pill text-bg-light">Git</span>
+                      <span class="badge rounded-pill text-bg-light">Firebase</span>
+                      <span class="badge rounded-pill text-bg-light">OOP</span>
+                      <span class="badge rounded-pill text-bg-light">ReactJS</span>
+                      <span class="badge rounded-pill text-bg-light">Python</span>
+                      <span class="badge rounded-pill text-bg-light">NodeJS</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                <h1 id="about-me" class="text-center text-md-start"><mark>About me</mark></h1>
+                <p class="lead">Aspiring Fullstack AI Developer, in his 3rd year of Computer Science at Wits. I enjoy problem solving through code, with the aim of contributing towards something bigger than myself. I am also a part-time Mathematics Tutor, with a passion for teaching and empowering the next generation. My hobbies include sports, video games and a dash of digital marketing.</p>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+      <!-- Section Container -->
+      <div class="container p-5">
+        <h1 id="projects" class="text-center"><mark>Projects</mark></h1>
+        <!-- Start of row -->
+        <div class="row">
+
+          <!-- Card 1 -->
+          <div class="col-md-4 mt-3">
+            <div class="card">
+              <img src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/Tesla.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Tesla Landing Page</h5>
+                <p class="card-text">HTML | CSS</p>
+                <a href="https://modern-car-brand-elon.netlify.app/" target="_blank" class="btn btn-primary">View Website</a>
+                <a href="https://github.com/AbdullahAliCodes/tesla-clone-htmlcss" target="_blank" class="btn btn-primary">View Code</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4 mt-3">
+            <div class="card">
+              <img src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/css_netflix.png" class="card-img-top" alt="Netflix Card Image">
+              <div class="card-body">
+                <h5 class="card-title">Netflix Landing Page</h5>
+                <p class="card-text">HTML | CSS</p>
+                <a href="https://flix-of-the-net.netlify.app/" target="_blank" class="btn btn-primary">View Website</a>
+                <a href="https://github.com/AbdullahAliCodes/netflix-clone-htmlcss" target="_blank" class="btn btn-primary">View Code</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4 mt-3">
+            <div class="card">
+              <img src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/html_youtube.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Youtube Landing Page</h5>
+                <p class="card-text">HTML | CSS</p>
+                <a href="https://youtob-clone.netlify.app/" target="_blank" class="btn btn-primary">View Website</a>
+                <a href="https://github.com/AbdullahAliCodes/youtube-clone-htmlcss" target="_blank" class="btn btn-primary">View Code</a>
+              </div>
+            </div>
+          </div>
+
+        <!-- End of Row -->
+        </div>
+
+        <!-- End of Section Container -->
+      </div>
     </section>
 
     <script
