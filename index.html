@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="cover.css" rel="stylesheet" />
 
-    <title>Portfolio | Abdullah Ali</title>
+    <title id="home">Portfolio | Abdullah Ali</title>
     
     <!-- <style>
       .bd-placeholder-img {
@@ -189,25 +189,21 @@
     </div> -->
     
     <!-- Header Section-->
-    <div class= "banner-wrap vw-100 vh-100">
+    <div class= "banner-wrap vw-100 vh-100 text-white">
       <div class="overlay"></div>
       <!-- Nav Bar -->
-        <header class="px-5 p-3" text-white>
+        <header class="px-5 p-3 text-white fixed-top">
           <div>
             <h3 class="float-md-start text-center">Portfolio</h3>
-            <nav class="nav nav-masthead justify-content-center float-md-end">
-              <a
-                class="nav-link fw-bold py-1 px-0 active"
-                aria-current="page"
-                href="#"
-                >Home
-                </a>
+            <nav class="nav nav-masthead justify-content-center float-md-end ">
+              <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#home">Home</a>
               <a class="nav-link fw-bold py-1 px-0" href="#about-me">About me</a>
               <a class="nav-link fw-bold py-1 px-0" href="#projects">Projects</a>
+              <a class="nav-link fw-bold py-1 px-0" href="#contact">Contact</a>
             </nav>
           </div>
         </header>
-    <!-- Header Section Content -->
+      <!-- Header Section Content -->
       <main class="d-flex flex-column align-items-center justify-content-center h-75 text-center">
         <h1 class="display-1">I am Abdullah Ali</h1>
         <p class="lead">
@@ -217,7 +213,7 @@
     </div>
 
     <!-- About Me Section -->
-    <section>
+    <section id="about-me">
       <div class="container p-5">
         <div class="card">
           <div class="card-body">
@@ -247,7 +243,7 @@
                 </div>
               </div>
               <div class="col-md-6 mt-3">
-                <h1 id="about-me" class="text-center text-md-start"><mark>About me</mark></h1>
+                <h1 class="text-center text-md-start"><mark>About me</mark></h1>
                 <p class="lead">Aspiring Fullstack AI Developer, in his 3rd year of Computer Science at Wits. I enjoy problem solving through code, with the aim of contributing towards something bigger than myself. I am also a part-time Mathematics Tutor, with a passion for teaching and empowering the next generation. My hobbies include sports, video games and a dash of digital marketing.</p>
               </div>
             </div>            
@@ -257,10 +253,10 @@
     </section>
 
     <!-- Projects Section -->
-    <section>
+    <section id="projects">
       <!-- Section Container -->
       <div class="container p-5">
-        <h1 id="projects" class="text-center"><mark>Projects</mark></h1>
+        <h1 class="text-center"><mark>Projects</mark></h1>
         <!-- Start of row -->
         <div class="row">
 
@@ -310,22 +306,48 @@
       </div>
     </section>
 
-    <section>
+    <section id="contact">
       <div class="container p-5">
         <div class="card p-3">
           <div class="card-body px-5 text-center">
             <h1><mark>Let's Connect</mark></h1>
-            <p class="lead">Would love to connect with fellow developers, employers looking for developers, or anyone looking to get web development done.</p>
+            <p class="lead">Would love to connect with fellow developers, employers looking for developers. Follow me on socials, follow along for my developer journey.</p>
             <p class="">
               <a href="https://www.linkedin.com/in/abdullah-ali-31463783/" class="fs-2" target="_blank" ><i class="bi bi-linkedin m-2"></i></a>
               <a href="https://github.com/AbdullahAliCodes" class="fs-2" target="_blank" ><i class="bi bi-github m-2"></i></a>
               <a href="https://www.instagram.com/uncledullaz/" class="fs-2" target="_blank" ><i class="bi bi-instagram m-2"></i></a>
               <!-- <a href="#"><i class="bi bi-email m-2" class="fs-2" target="_blank" ></i></a> -->
+
+              <!-- Email Form -->
+              <form>
+                <div class="mb-3">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address">
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="name" placeholder="Enter name">
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="subject" placeholder="Subject">
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" aria-label="With textarea" placeholder="Enter message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+              <!-- End of form -->
+
             </p>
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        header.classList.toggle("scrolling", window.scrollY > 500);
+      });
+    </script>
 
     <!-- <script
       src="../assets/dist/js/bootstrap.bundle.min.js"
