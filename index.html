@@ -189,7 +189,7 @@
     </div> -->
     
     <!-- Header Section-->
-    <div class= "banner-wrap vw-100 vh-100 text-white">
+    <div class= "banner-wrap vw-100 vh-100 d-flex flex-column align-items-center justify-content-center text-white">
       <div class="overlay"></div>
       <!-- Nav Bar -->
         <header class="px-5 p-3 text-white fixed-top">
@@ -204,11 +204,9 @@
           </div>
         </header>
       <!-- Header Section Content -->
-      <main class="d-flex flex-column align-items-center justify-content-center h-75 text-center">
+      <main class="text-center">
         <h1 class="display-1">I am Abdullah Ali</h1>
-        <p class="lead">
-          Student. Fullstack AI Developer. Tech Enthusiast.
-        </p>
+        <span id="typed" class="lead"></span>
       </main>
     </div>
 
@@ -342,10 +340,28 @@
       </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-3">
+        <p>Developed by Abdullah Ali using Bootstrap</p>
+      </div>
+    </footer>
+
+    <!-- Scrolling Effect of the Navbar -->
     <script>
       window.addEventListener("scroll", () => {
         const header = document.querySelector("header");
         header.classList.toggle("scrolling", window.scrollY > 500);
+      });
+    </script>
+
+    <!-- Typed.js library for the typing effect -->
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed('#typed', {
+        strings: ['Student.', 'Fullstack AI Developer.','Tech Enthusiast.'],
+        loop: true,
+        typeSpeed: 65,
       });
     </script>
 
