@@ -18,31 +18,50 @@
   </head>
   
   <body class="text-white">
+    
+    <!-- Nav Bar -->
+    <nav id="navbar-example2" class="navbar text-white w-75 h ps-4 pe-3 mx-auto my-5 fixed-top rounded-4 text-lowercase">
+      <a class="navbar-brand text-white " href="#">portfolio | </a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#home">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#about-me">about me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#projects">projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#contact">contact me</a>
+        </li>
+      </ul>
+    </nav>
+    
     <!-- Header Section-->
-    <span id="home"></span>
+    <span id="home" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"></span>
     <div class= "banner-wrap vw-100 vh-100 d-flex flex-column align-items-center justify-content-center text-white">
       <div class="overlay"></div>
-      <!-- Nav Bar -->
-        <header class="px-5 p-3 text-white fixed-top">
-          <div>
-            <h3 class="float-md-start text-center">Portfolio</h3>
-            <nav class="nav nav-masthead justify-content-center float-md-end ">
-              <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#home">Home</a>
-              <a class="nav-link fw-bold py-1 px-0" href="#about-me">About me</a>
-              <a class="nav-link fw-bold py-1 px-0" href="#projects">Projects</a>
-              <a class="nav-link fw-bold py-1 px-0" href="#contact">Contact</a>
-            </nav>
-          </div>
-        </header>
+  
       <!-- Header Section Content -->
-      <main class="text-center">
-        <h1 class="display-1">I am Abdullah Ali</h1>
-        <span id="typed" class="lead"></span>
-      </main>
+      <div class="container">
+        <div class="row">
+          <img src="" alt="">
+
+        </div>
+        <div class="row">
+          <main class="text-center">
+            <h1 id="name-title" class="display-1">abdullah</h1>
+            <h1 id="name-title" class="display-1">ali</h1>
+            <span id="typed" class="lead"></span>
+          </main>
+        </div>
+      </div>
+
     </div>
 
     <!-- About Me Section -->
-    <section id="about-me">
+    <section id="about-me" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
       <div class="container p-5">
         <div class="card">
           <div class="card-body">
@@ -82,7 +101,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
       <!-- Section Container -->
       <div class="container p-5">
         <h1 class="text-center"><mark>Projects</mark></h1>
@@ -135,7 +154,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
       <div class="container p-5">
         <div class="card p-3">
           <div class="card-body px-5 text-center">
@@ -192,7 +211,7 @@
     <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
     <script>
       var typed = new Typed('#typed', {
-        strings: ['Student.', 'Fullstack AI Developer.','Tech Enthusiast.'],
+        strings: ['student.', 'fullstack ai developer.','tech enthusiast.'],
         loop: true,
         typeSpeed: 65,
       });

@@ -1,3 +1,20 @@
+@font-face {
+  font-family: 'Nova Klasse';
+  src: url('./assets/fonts/nova-klasse-font/novaklasse-semibold-BF65f32c1d1314a.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nova Klasse';
+  src: url('./assets/fonts/nova-klasse-font/novaklasse-semibdoblique-BF65f32c1d466fc.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 /*
  * Globals
  */
@@ -6,6 +23,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 
 
@@ -17,15 +35,46 @@
  * Header
  */
 
+#navbar-example2  {
+  background-color: rgba(97, 97, 97, 0.5) !important;
+}
+
+#name-title {
+  font-family: 'Nova Klasse';
+}
+
 .banner-wrap {
-  background-image: url(./assets/images/abdullah.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   height: 100vh;
   border-bottom: 10px solid #222222;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+}
+
+.banner-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    120deg,
+    #0a0a12 0%,
+    #1a1a3e 20%,
+    #16213e 40%,
+    #0f3460 50%,
+    #16213e 60%,
+    #1a1a3e 80%,
+    #0a0a12 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+  will-change: background-position;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .overlay {
@@ -33,7 +82,7 @@
   height: 100%;
   width: 100%;
   background: black;
-  opacity: 50%;
+  opacity: 35%;
   position: absolute;
   top: 0;
 }
