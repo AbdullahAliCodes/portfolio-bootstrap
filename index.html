@@ -23,7 +23,7 @@
     <div class= "banner-wrap vw-100 vh-100 d-flex flex-column align-items-center justify-content-center text-white">
       <div class="overlay"></div>
       <!-- Nav Bar -->
-        <header class="px-5 p-3 text-white fixed-top bg-black">
+        <header id="nav-bar" class="px-5 p-3 text-white fixed-top bg-black">
           <div>
             <h3 class="float-md-start text-center">Portfolio</h3>
             <nav class="nav nav-masthead justify-content-center float-md-end ">
@@ -36,7 +36,7 @@
         </header>
       <!-- Header Section Content -->
       <main class="text-center">
-        <h1 class="display-1">I am Abdullah Ali</h1>
+        <h1 class="display-2 m-3 m-md-0">I am Abdullah Ali</h1>
         <span id="role-subheading">Aspiring Fullstack AI Developer</span>
         <span id="typed" class="lead"></span>
       </main>
@@ -45,7 +45,7 @@
     <!-- About Me Section -->
     <section id="about-me">
       <div class="container p-5">
-        <div class="card">
+        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
           <div class="card-body">
             <div class="row p-3">
               <div class="col-md-6 col-sm-12">
@@ -93,7 +93,7 @@
           <!-- Card 1 -->
           <div class="col-md-4 mt-3">
             <div class="card">
-              <img src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/Tesla.png" class="card-img-top" alt="...">
+              <img src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/Tesla.png" class="object-fit-cover" alt="Tesla project cover image">
               <div class="card-body">
                 <h5 class="card-title">Tesla Landing Page</h5>
                 <p class="card-text">HTML | CSS</p>
@@ -106,7 +106,7 @@
           <!-- Card 2 -->
           <div class="col-md-4 mt-3">
             <div class="card">
-              <img src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/css_netflix.png" class="card-img-top" alt="Netflix Card Image">
+              <img src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/css_netflix.png" class="object-fit-cover" alt="Netflix project cover image">
               <div class="card-body">
                 <h5 class="card-title">Netflix Landing Page</h5>
                 <p class="card-text">HTML | CSS</p>
@@ -119,7 +119,7 @@
           <!-- Card 3 -->
           <div class="col-md-4 mt-3">
             <div class="card">
-              <img src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/html_youtube.png" class="card-img-top" alt="...">
+              <img src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/html_youtube.png" class="object-fit-cover" alt="YouTube project cover image">
               <div class="card-body">
                 <h5 class="card-title">Youtube Landing Page</h5>
                 <p class="card-text">HTML | CSS</p>
@@ -128,6 +128,45 @@
               </div>
             </div>
           </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-4 mt-3">
+            <div class="card">
+              <img src="./assets/images/race-iq-logo.png" class="object-fit-cover" alt="Logo for 'RaceIQ'">
+              <div class="card-body">
+                <h5 class="card-title">RaceIQ | F1 Stats Tracker</h5>
+                <p class="card-text">ReactJS w/ TypeScript | NodeJS | Supabase | Auth0 | Vercel / Render </p>
+                <a href="https://race-iq.vercel.app/" target="_blank" class="btn btn-primary">View Website</a>
+                <a href="https://github.com/Race1Q/RaceIQ" target="_blank" class="btn btn-outline-dark"><i class="bi bi-code-slash"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-md-4 mt-3">
+            <div class="card">
+              <img src="./assets/images/hood-goods-logo.png" class="object-fit-cover" alt="Logo for 'Hood Goods'">
+              <div class="card-body">
+                <h5 class="card-title">Hood Goods | Artisan Marketplace</h5>
+                <p class="card-text">ReactJS w/ JavaScript | NodeJS | Supabase | Auth0 | Azure </p>
+                <a href="https://victorious-mud-0224f2003.6.azurestaticapps.net/" target="_blank" class="btn btn-primary">View Website</a>
+                <a href="https://github.com/AbdullahAliCodes/HoodGoods" target="_blank" class="btn btn-outline-dark"><i class="bi bi-code-slash"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-md-4 mt-3">
+            <div class="card">
+              <img src="./assets/images/mouse-linkedin.webp" class="object-fit-cover" alt="Mouse picture for 'Mice for LinkedIn'">
+              <div class="card-body">
+                <h5 class="card-title">LinkedIn, for Mice</h5>
+                <p class="card-text">HTML | CSS | JavaScript</p>
+                <a href="https://www.linkedin.com/company/mice/about/" target="_blank" class="btn btn-primary">View Website</a>
+                <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" class="btn btn-outline-dark"><i class="bi bi-code-slash"></i></a>
+              </div>
+            </div>
+          </div>          
 
         <!-- End of Row -->
         </div>
@@ -142,33 +181,37 @@
           <div class="card-body px-5 text-center">
             <h1><mark>Let's Connect</mark></h1>
             <p class="lead">Would love to connect with fellow developers, employers looking for developers. Follow me on socials, follow along for my developer journey.</p>
-            <p class="">
+            <div class="d-flex justify-content-center flex-wrap gap-2 my-2">
               <a href="https://www.linkedin.com/in/abdullah-ali-31463783/" class="fs-2" target="_blank" ><i class="bi bi-linkedin m-2"></i></a>
               <a href="https://github.com/AbdullahAliCodes" class="fs-2" target="_blank" ><i class="bi bi-github m-2"></i></a>
               <a href="https://www.instagram.com/uncledullaz/" class="fs-2" target="_blank" ><i class="bi bi-instagram m-2"></i></a>
               <!-- <a href="#"><i class="bi bi-email m-2" class="fs-2" target="_blank" ></i></a> -->
+            </div>
 
               <!-- Email Form -->
-              
+            
               <form>
                 <div class="mb-3">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                  <input type="text" class="form-control" id="name" placeholder="Enter name">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" required class="form-control" id="name">
                 </div>
                 <div class="mb-3">
-                  <input type="text" class="form-control" id="subject" placeholder="Subject">
+                  <label for="subject">Subject</label>
+                  <input id="subject" type="text" required class="form-control" id="subject">
                 </div>
                 <div class="mb-3">
-                  <textarea class="form-control" aria-label="With textarea" placeholder="Enter message"></textarea>
+                  <label for="message">Message</label>
+                  <textarea id="message" class="form-control" required aria-label="With textarea"></textarea>
                 </div>
-                <p>Please note: This form is under construction. Contact me on Socials in the meantime.</p>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form> 
               <!-- End of form -->
 
-            </p>
+            <!-- </p> -->
           </div>
         </div>
       </div>
@@ -177,7 +220,7 @@
     <!-- Footer -->
     <footer class="bg-dark text-center text-white">
       <div class="container p-3">
-        <p>Developed by Abdullah Ali using Bootstrap</p>
+        <p>Developed by Abdullah Ali using Bootstrap, for portfolio purposes.</p>
       </div>
     </footer>
 
