@@ -1,6 +1,19 @@
-/*
- * Globals
- */
+@font-face {
+  font-family: 'Nova Klasse';
+  src: url('./assets/fonts/nova-klasse-font/novaklasse-semibold-BF65f32c1d1314a.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nova Klasse';
+  src: url('./assets/fonts/nova-klasse-font/novaklasse-semibdoblique-BF65f32c1d466fc.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -9,13 +22,7 @@
 }
 
 
-/*
- * Base structure
- */
-
-/*
- * Header
- */
+/* Header */
 
 .banner-wrap {
   background-image: url(./assets/images/abdullah.jpeg);
@@ -61,4 +68,13 @@
   background: black;
   opacity: 90%;
   transition: all 1s;
+}
+
+h1 {
+  font-family: Nova Klasse;
+  /* font-size: 10px; */
+}
+
+#role-subheading {
+  font-family: Nunito;
 }
