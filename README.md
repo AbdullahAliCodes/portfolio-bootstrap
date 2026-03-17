@@ -6,13 +6,13 @@ A single-page portfolio site built with **Bootstrap 5**. Showcases projects, ski
 
 ## Sections implemented
 
-| Section | Description |
-|--------|-------------|
-| **Hero / Header** | Full-viewport banner with background image and overlay; name ("I am Abdullah Ali"), role ("Aspiring Fullstack AI Developer"); fixed top navbar with anchor links (Home, About me, Projects, Contact). |
-| **About me** | Card layout with profile image, name, profile title, email, phone; skill badges (HTML, CSS, JavaScript, Git, Firebase, OOP, ReactJS, Python, NodeJS); short bio. |
-| **Projects** | Grid of 6 project cards. Each card: image, title, tech stack, "View Website" button, and code/source link (Bootstrap Icons). Projects: Tesla Landing Page, Netflix Landing Page, YouTube Landing Page, RaceIQ \| F1 Stats Tracker, Hood Goods \| Artisan Marketplace, LinkedIn for Mice. |
-| **Contact** | "Let's Connect" heading and lead text; social links (LinkedIn, GitHub, Instagram) via Bootstrap Icons; contact form with Email, Name, Subject, Message and Submit. |
-| **Footer** | Single line: "Developed by Abdullah Ali using Bootstrap, for portfolio purposes." |
+| Section           | Description                                                                                                                                                                                                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Hero / Header** | Full-viewport banner with background image and overlay; name ("I am Abdullah Ali"), role ("Aspiring Fullstack AI Developer"); fixed top navbar with anchor links (Home, About me, Projects, Contact).                                                                                    |
+| **About me**      | Card layout with profile image, name, profile title, email, phone; skill badges (HTML, CSS, JavaScript, Git, Firebase, OOP, ReactJS, Python, NodeJS); short bio.                                                                                                                         |
+| **Projects**      | Grid of 6 project cards. Each card: image, title, tech stack, "View Website" button, and code/source link (Bootstrap Icons). Projects: Tesla Landing Page, Netflix Landing Page, YouTube Landing Page, RaceIQ \| F1 Stats Tracker, Hood Goods \| Artisan Marketplace, LinkedIn for Mice. |
+| **Contact**       | "Let's Connect" heading and lead text; social links (LinkedIn, GitHub, Instagram) via Bootstrap Icons; contact form with Email, Name, Subject, Message and Submit.                                                                                                                       |
+| **Footer**        | Single line: "Developed by Abdullah Ali using Bootstrap, for portfolio purposes."                                                                                                                                                                                                        |
 
 ---
 
@@ -45,7 +45,9 @@ A single-page portfolio site built with **Bootstrap 5**. Showcases projects, ski
 ---
 
 ## Project structure
+
 cover/ ├── index.html # Single-page markup ├── cover.css # Main styles (fonts, banner, nav, cards) ├── print.css # Print-only styles ├── assets/ │ ├── dist/css/ # Bootstrap CSS │ ├── dist/js/ # Bootstrap JS │ ├── fonts/ # Nova Klasse OTF │ └── images/ # Profile and project assets └── README.md
 
 ## License
+
 For portfolio purposes. Bootstrap is MIT; Nova Klasse subject to its font license (`assets/fonts/nova-klasse-font/Befonts-License.txt`).
