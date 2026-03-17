@@ -69,12 +69,6 @@ body {
   border-bottom-color: #fff;
 }
 
-.scrolling {
-  background: black;
-  opacity: 90%;
-  transition: all 1s;
-}
-
 h1 {
   font-family: Nova Klasse;
   /* font-size: 10px; */
