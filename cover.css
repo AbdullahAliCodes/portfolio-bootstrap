@@ -83,3 +83,21 @@ h1 {
 #role-subheading {
   font-family: Nunito;
 }
+
+#projects .card-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#projects .card-body .card-title {
+  flex: 0 0 100%;
+}
+
+#projects .card-body .card-text {
+  flex: 0 0 100%;
+}
+
+#projects .card-body .btn {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+}
