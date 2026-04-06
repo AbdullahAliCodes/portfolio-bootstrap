@@ -19,8 +19,14 @@
  * Globals
  */
 
-html {
-  color-scheme: light;
+[data-bs-theme='light'] body {
+  background-color: #fff;
+  color: #212529;
+}
+
+[data-bs-theme='dark'] body {
+  background-color: var(--bs-body-bg, #212529);
+  color: var(--bs-body-color, #dee2e6);
 }
 
 * {
@@ -76,24 +82,125 @@ html {
   opacity: 1;
 }
 
-#about-me,
-#projects,
-#contact {
-  background-color: #fff;
+#navbar-example2.navbar-scrolled #theme-toggle {
+  color: #fff !important;
+}
+
+#theme-toggle:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 2px;
+}
+
+[data-bs-theme='light'] #about-me,
+[data-bs-theme='light'] #projects,
+[data-bs-theme='light'] #contact {
+  background-color: #fff !important;
   color: #212529;
+}
+
+[data-bs-theme='dark'] #about-me,
+[data-bs-theme='dark'] #projects,
+[data-bs-theme='dark'] #contact {
+  background-color: var(--bs-body-bg, #212529) !important;
+  color: var(--bs-body-color, #dee2e6);
+}
+
+[data-bs-theme='light'] #about-me .card,
+[data-bs-theme='light'] #projects .card,
+[data-bs-theme='light'] #contact .card {
+  background-color: #fff !important;
+  color: #212529 !important;
+  border-color: rgba(33, 37, 41, 0.12);
+}
+
+[data-bs-theme='dark'] #about-me .card,
+[data-bs-theme='dark'] #projects .card,
+[data-bs-theme='dark'] #contact .card {
+  background-color: var(--bs-secondary-bg, #2b3035) !important;
+  color: var(--bs-body-color, #dee2e6) !important;
+  border-color: var(--bs-border-color, #495057) !important;
+}
+
+[data-bs-theme='light'] #about-me .card .card-body,
+[data-bs-theme='light'] #projects .card .card-body,
+[data-bs-theme='light'] #contact .card .card-body {
+  color: #212529;
+}
+
+[data-bs-theme='dark'] #about-me .card .card-body,
+[data-bs-theme='dark'] #projects .card .card-body,
+[data-bs-theme='dark'] #contact .card .card-body {
+  color: var(--bs-body-color, #dee2e6);
+}
+
+[data-bs-theme='light'] #about-me .card-title,
+[data-bs-theme='light'] #projects .card-title,
+[data-bs-theme='light'] #contact .card-title {
+  color: #212529;
+}
+
+[data-bs-theme='dark'] #about-me .card-title,
+[data-bs-theme='dark'] #projects .card-title,
+[data-bs-theme='dark'] #contact .card-title {
+  color: var(--bs-body-color, #f8f9fa);
 }
 
 #name-title-line-1,
 #name-title-line-2,
 #title-about-me,
 #title-projects,
-#title-contact,
-#title-about-me mark,
-#title-projects mark,
-#title-contact mark {
+#title-contact {
   font-family: 'Nova Klasse', sans-serif;
   font-weight: 600;
   font-synthesis: none;
+}
+
+/* Section headings: strong contrast on light surfaces */
+[data-bs-theme="light"] #title-about-me,
+[data-bs-theme="light"] #title-projects,
+[data-bs-theme="light"] #title-contact {
+  color: #212529 !important;
+}
+
+[data-bs-theme="dark"] #title-about-me,
+[data-bs-theme="dark"] #title-projects,
+[data-bs-theme="dark"] #title-contact {
+  color: var(--bs-heading-color, #f8f9fa) !important;
+}
+
+/* Contact form: readable fields in light theme */
+[data-bs-theme="light"] #contact .form-control {
+  background-color: #fff !important;
+  color: #212529 !important;
+  border: 1px solid #ced4da !important;
+}
+
+[data-bs-theme="light"] #contact .form-control::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+[data-bs-theme="light"] #contact .form-control:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+[data-bs-theme="dark"] #contact .form-control {
+  background-color: var(--bs-secondary-bg, #2b3035) !important;
+  color: var(--bs-body-color, #dee2e6) !important;
+  border: 1px solid var(--bs-border-color, #495057) !important;
+}
+
+[data-bs-theme="dark"] #contact .form-control::placeholder {
+  color: var(--bs-secondary-color, #adb5bd);
+  opacity: 1;
+}
+
+[data-bs-theme="dark"] #contact .form-control:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 .banner-wrap {
@@ -156,5 +263,17 @@ html {
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+[data-bs-theme='light'] footer.border-top {
+  background-color: #fff !important;
+  color: var(--bs-body-color, #212529) !important;
+  border-color: var(--bs-border-color, #dee2e6) !important;
+}
+
+[data-bs-theme='dark'] footer.border-top {
+  background-color: var(--bs-body-bg, #212529) !important;
+  color: var(--bs-body-color, #dee2e6) !important;
+  border-color: var(--bs-border-color, #495057) !important;
 }
 
