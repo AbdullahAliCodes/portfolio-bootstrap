@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 @font-face {
   font-family: 'Nova Klasse';
   src: url('./assets/fonts/nova-klasse-font/novaklasse-semibold-BF65f32c1d1314a.otf') format('opentype');
@@ -13,11 +15,13 @@
   font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
-
 /*
  * Globals
  */
+
+html {
+  color-scheme: light;
+}
 
 * {
   margin: 0;
@@ -35,17 +39,65 @@
  * Header
  */
 
-#navbar-example2  {
-  background-color: rgba(97, 97, 97, 0.5) !important;
+#navbar-example2 {
+  background-color: rgba(97, 97, 97, 0.14) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+  will-change: width, border-radius, background-color;
+  transition-property: width, max-width, margin, border-radius, background-color, box-shadow;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-#name-title {
-  font-family: 'Nova Klasse';
+@media (prefers-reduced-motion: reduce) {
+  #navbar-example2 {
+    transition: none !important;
+  }
+}
+
+#navbar-example2.navbar-scrolled {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-radius: 0 !important;
+  top: 0;
+  background-color: rgba(33, 37, 41, 0.8) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  z-index: 1040;
+}
+
+#navbar-example2.navbar-scrolled .navbar-brand,
+#navbar-example2.navbar-scrolled .nav-link {
+  color: #fff !important;
+  opacity: 1;
+}
+
+#about-me,
+#projects,
+#contact {
+  background-color: #fff;
+  color: #212529;
+}
+
+#name-title-line-1,
+#name-title-line-2,
+#title-about-me,
+#title-projects,
+#title-contact,
+#title-about-me mark,
+#title-projects mark,
+#title-contact mark {
+  font-family: 'Nova Klasse', sans-serif;
+  font-weight: 600;
+  font-synthesis: none;
 }
 
 .banner-wrap {
   height: 100vh;
-  border-bottom: 10px solid #222222;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -106,8 +158,3 @@
   border-bottom-color: #fff;
 }
 
-.scrolling {
-  background: black;
-  opacity: 90%;
-  transition: all 1s;
-}
