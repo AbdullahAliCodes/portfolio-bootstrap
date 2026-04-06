@@ -25,6 +25,10 @@ function applyTheme(theme) {
   document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
   localStorage.setItem(THEME_KEY, theme);
   syncThemeToggleIcon(theme);
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  if (metaTheme) {
+    metaTheme.setAttribute('content', theme === 'dark' ? '#0A0A12' : '#DCDCDC');
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
