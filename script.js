@@ -104,6 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     applyProjectFilter('all');
   }
+
+  const navCollapse = document.getElementById('mainNavbar');
+  if (navCollapse && typeof bootstrap !== 'undefined') {
+    navCollapse.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 992 && navCollapse.classList.contains('show')) {
+          bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+        }
+      });
+    });
+  }
 });
 
 syncProjectThumbnails(getStoredOrPreferredTheme());
