@@ -217,6 +217,12 @@ body {
   opacity: 0.5;
 }
 
+@media (max-width: 991.98px) {
+  #navbar-example2 .nav-link::after {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   #navbar-example2 {
     transition: none !important;
@@ -458,6 +464,42 @@ body {
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
 }
 
+#contact .bi-linkedin {
+  color: var(--accent-primary);
+}
+
+#contact .bi-github {
+  color: var(--accent-teal);
+}
+
+#contact .bi-instagram {
+  color: var(--accent-red);
+}
+
+#contact .bi-linkedin,
+#contact .bi-github,
+#contact .bi-instagram {
+  transition: opacity 0.2s ease;
+}
+
+#contact a:hover .bi-linkedin,
+#contact a:hover .bi-github,
+#contact a:hover .bi-instagram {
+  opacity: 0.8;
+}
+
+#contact form .btn.btn-primary {
+  --bs-btn-bg: var(--accent-yellow);
+  --bs-btn-border-color: var(--accent-yellow);
+  --bs-btn-hover-bg: var(--accent-yellow);
+  --bs-btn-hover-border-color: var(--accent-yellow);
+  --bs-btn-active-bg: var(--accent-yellow);
+  --bs-btn-active-border-color: var(--accent-yellow);
+  --bs-btn-color: #212529;
+  --bs-btn-hover-color: #212529;
+  --bs-btn-active-color: #212529;
+}
+
 .btn-group .btn,
 .filter-btn {
   min-width: 120px;
@@ -623,16 +665,33 @@ body {
   overflow: hidden;
 }
 
+.hero-main {
+  width: 100%;
+}
+
+.hero-main-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hero-name-block {
+  display: flex;
+  flex-direction: column;
+}
+
 .status-badge-wrapper,
 .status-badge {
   display: inline-flex;
-  align-items: center;
-  gap: 1.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
   padding: 0.6rem 2.5rem 0.6rem 0.6rem;
   border-radius: 50px;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   box-shadow: 0 2px 14px rgba(var(--bs-primary-rgb), 0.12);
 }
 
@@ -654,6 +713,20 @@ body {
   align-items: flex-start;
   text-align: left;
   gap: 0.15rem;
+}
+
+@media (min-width: 992px) {
+  .hero-main-layout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2.25rem;
+  }
+
+  .hero-name-block {
+    align-items: flex-start;
+    text-align: left;
+  }
 }
 
 .status-badge-label {
