@@ -161,6 +161,7 @@ body {
 /* Only show the icon when active */
 #navbar-example2 .nav-link.active::after {
   opacity: 1;
+  animation: ps-float 2s ease-in-out infinite;
 }
 
 /* 1. HOME - Triangle (Teal) */
@@ -546,6 +547,7 @@ body {
 
 [data-bs-theme="light"] .project-tabs .filter-btn:is(.active, .btn-primary)::before {
   opacity: 1;
+  animation: ps-float 2s ease-in-out infinite;
 }
 
 [data-bs-theme="light"] .project-tabs #filter-all::before {
@@ -563,6 +565,16 @@ body {
   content: "\25CB";
   color: var(--accent-red);
   font-size: 16px;
+}
+
+@keyframes ps-float {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
 }
 
 [data-bs-theme="dark"] .project-tabs .btn.active,
