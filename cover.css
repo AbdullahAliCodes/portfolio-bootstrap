@@ -217,6 +217,12 @@ body {
   opacity: 0.5;
 }
 
+@media (max-width: 991.98px) {
+  #navbar-example2 .nav-link::after {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   #navbar-example2 {
     transition: none !important;
@@ -456,6 +462,42 @@ body {
   border-color: var(--bs-primary) !important;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+#contact .bi-linkedin {
+  color: var(--accent-primary);
+}
+
+#contact .bi-github {
+  color: var(--accent-teal);
+}
+
+#contact .bi-instagram {
+  color: var(--accent-red);
+}
+
+#contact .bi-linkedin,
+#contact .bi-github,
+#contact .bi-instagram {
+  transition: opacity 0.2s ease;
+}
+
+#contact a:hover .bi-linkedin,
+#contact a:hover .bi-github,
+#contact a:hover .bi-instagram {
+  opacity: 0.8;
+}
+
+#contact form .btn.btn-primary {
+  --bs-btn-bg: var(--accent-yellow);
+  --bs-btn-border-color: var(--accent-yellow);
+  --bs-btn-hover-bg: var(--accent-yellow);
+  --bs-btn-hover-border-color: var(--accent-yellow);
+  --bs-btn-active-bg: var(--accent-yellow);
+  --bs-btn-active-border-color: var(--accent-yellow);
+  --bs-btn-color: #212529;
+  --bs-btn-hover-color: #212529;
+  --bs-btn-active-color: #212529;
 }
 
 .btn-group .btn,
