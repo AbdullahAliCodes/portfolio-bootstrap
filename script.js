@@ -54,7 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const hero = document.getElementById('home');
 
   function updateNavbarScrolled() {
-    if (!navbar || !hero) return;
+    if (!navbar) return;
+    if (!hero) {
+      navbar.classList.toggle('navbar-scrolled', window.scrollY > 8);
+      return;
+    }
     const dockEarlyPx = 160;
     const threshold = Math.max(0, hero.offsetHeight - dockEarlyPx);
     const scrolledPastHero = window.scrollY >= threshold;
@@ -71,6 +75,34 @@ document.addEventListener('DOMContentLoaded', () => {
       loop: true,
       typeSpeed: 65,
     });
+  }
+
+  const filterButtons = Array.from(document.querySelectorAll('[data-project-filter]'));
+  const projectCards = Array.from(document.querySelectorAll('.project-card[data-project-category]'));
+
+  function applyProjectFilter(filter) {
+    projectCards.forEach((card) => {
+      const category = card.dataset.projectCategory;
+      const shouldShow = filter === 'all' || filter === category;
+      card.classList.toggle('d-none', !shouldShow);
+    });
+
+    filterButtons.forEach((button) => {
+      const isActive = button.dataset.projectFilter === filter;
+      button.classList.toggle('active', isActive);
+      button.classList.toggle('btn-primary', isActive);
+      button.classList.toggle('btn-outline-primary', !isActive);
+      button.setAttribute('aria-selected', String(isActive));
+    });
+  }
+
+  if (filterButtons.length && projectCards.length) {
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        applyProjectFilter(button.dataset.projectFilter || 'all');
+      });
+    });
+    applyProjectFilter('all');
   }
 });
 
