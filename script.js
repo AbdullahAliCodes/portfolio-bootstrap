@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (typeof Typed !== 'undefined') {
     new Typed('#typed', {
-      strings: ['student.', 'fullstack ai developer.', 'tech enthusiast.'],
+      strings: ['student.', 'aspiring software engineer.', 'tech enthusiast.'],
       loop: true,
       typeSpeed: 65,
     });
@@ -79,8 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const filterButtons = Array.from(document.querySelectorAll('[data-project-filter]'));
   const projectCards = Array.from(document.querySelectorAll('.project-card[data-project-category]'));
+  const projectsGrid = document.getElementById('projects-grid');
 
   function applyProjectFilter(filter) {
+    if (projectsGrid) {
+      projectsGrid.classList.toggle('filter-all-active', filter === 'all');
+      projectsGrid.classList.toggle('filter-foundational-active', filter === 'foundational');
+      projectsGrid.classList.toggle('filter-capstone-active', filter === 'capstone');
+    }
+
     projectCards.forEach((card) => {
       const category = card.dataset.projectCategory;
       const shouldShow = filter === 'all' || filter === category;

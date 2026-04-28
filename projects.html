@@ -53,16 +53,16 @@
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav nav nav-pills align-items-lg-center ms-lg-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html#home">home</a>
+              <a class="nav-link" id="nav-home" href="index.html#home">home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#about-me">about me</a>
+              <a class="nav-link" id="nav-about" href="index.html#about-me">about me</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="projects.html">projects</a>
+              <a class="nav-link active" id="nav-projects" aria-current="page" href="projects.html">projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#contact">contact me</a>
+              <a class="nav-link" id="nav-contact" href="index.html#contact">contact me</a>
             </li>
           </ul>
         </div>
@@ -75,9 +75,9 @@
 
         <div class="d-flex justify-content-center mb-4">
           <div class="btn-group project-tabs" role="tablist" aria-label="Project categories">
-            <button class="btn btn-primary active" type="button" data-project-filter="all">All</button>
-            <button class="btn btn-outline-primary" type="button" data-project-filter="foundational">Foundational</button>
-            <button class="btn btn-outline-primary" type="button" data-project-filter="capstone">Capstone</button>
+            <button id="filter-all" class="btn btn-primary active filter-btn" type="button" data-project-filter="all">All</button>
+            <button id="filter-foundational" class="btn btn-outline-primary filter-btn" type="button" data-project-filter="foundational">Foundational</button>
+            <button id="filter-capstone" class="btn btn-outline-primary filter-btn" type="button" data-project-filter="capstone">Capstone</button>
           </div>
         </div>
 
@@ -135,6 +135,24 @@
 
           <div class="col-12 col-md-6 col-xl-4 project-card" data-project-category="foundational">
             <div class="card h-100">
+              <img src="./assets/images/x-thumbnail-light.png" class="card-img-top project-theme-thumb" alt="Twitter clone project thumbnail" data-src-light="./assets/images/x-thumbnail-light.png" data-src-dark="./assets/images/x-thumbnail-dark.png" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Twitter Clone</h5>
+                <div class="project-tech-badges mb-3">
+                  <span class="badge">HTML</span>
+                  <span class="badge">CSS</span>
+                  <span class="badge">JavaScript</span>
+                </div>
+                <div class="mt-auto d-flex gap-2">
+                  <a href="https://twooter-eloonmoosk-clone.netlify.app/" target="_blank" class="btn btn-primary">View Website</a>
+                  <a href="https://github.com/AbdullahAliCodes/twitter-clone-htmlcss" target="_blank" class="btn btn-outline-secondary"><i class="bi bi-code-slash"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-4 project-card" data-project-category="foundational">
+            <div class="card h-100">
               <img src="https://placehold.co/1200x700/e8f0fe/1f1f1f?text=Google+Keep+Clone" class="card-img-top" alt="Google Keep Clone project thumbnail" />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Google Keep Clone <span class="small text-body-secondary">[coming soon]</span></h5>
@@ -147,24 +165,6 @@
                 <div class="mt-auto d-flex gap-2">
                   <button class="btn btn-secondary" type="button" disabled>Coming Soon</button>
                   <button class="btn btn-outline-secondary" type="button" disabled><i class="bi bi-code-slash"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-xl-4 project-card" data-project-category="foundational">
-            <div class="card h-100">
-              <img src="./assets/images/x-thumbnail-light.png" class="card-img-top project-theme-thumb" alt="Twitter clone project thumbnail" data-src-light="./assets/images/x-thumbnail-light.png" data-src-dark="./assets/images/x-thumbnail-dark.png" />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Twitter Clone</h5>
-                <div class="project-tech-badges mb-3">
-                  <span class="badge">HTML</span>
-                  <span class="badge">CSS</span>
-                  <span class="badge">JavaScript</span>
-                </div>
-                <div class="mt-auto d-flex gap-2">
-                  <a href="https://twooter-eloonmoosk-clone.netlify.app/" target="_blank" class="btn btn-primary">View Website</a>
-                  <a href="https://github.com/AbdullahAliCodes/twitter-clone-htmlcss" target="_blank" class="btn btn-outline-secondary"><i class="bi bi-code-slash"></i></a>
                 </div>
               </div>
             </div>
