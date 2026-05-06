@@ -85,7 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (projectsGrid) {
       projectsGrid.classList.toggle('filter-all-active', filter === 'all');
       projectsGrid.classList.toggle('filter-foundational-active', filter === 'foundational');
-      projectsGrid.classList.toggle('filter-capstone-active', filter === 'capstone');
+      projectsGrid.classList.toggle('filter-fullstack-active', filter === 'fullstack');
+      projectsGrid.classList.toggle('filter-wordpress-active', filter === 'wordpress');
     }
 
     projectCards.forEach((card) => {
