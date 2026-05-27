@@ -693,11 +693,26 @@ body {
   gap: 0.4rem;
 }
 
-.project-tech-badges .badge {
-  background-color: rgba(var(--bs-primary-rgb), 0.15);
+.badge-tech {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5em 0.8em;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background-color: var(--bg-surface);
   color: var(--text-primary);
-  border: 1px solid rgba(var(--bs-primary-rgb), 0.35);
-  font-weight: 600;
+  border: 1px solid var(--border-color);
+}
+
+.badge-tech i {
+  font-size: 1.1em;
+  line-height: 1;
+  color: inherit;
+}
+
+.badge-tech:hover {
+  background-color: var(--border-color);
 }
 
 #projects .card-img-top {
