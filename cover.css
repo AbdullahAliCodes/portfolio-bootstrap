@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
+/* PS1 palette — project filters & cards use these in both themes */
+:root {
+  --ps-teal: #01aea0;
+  --ps-yellow: #ffc501;
+  --ps-red: #ff0021;
+  --ps-blue: #006eb8;
+}
+
 :root,
 [data-bs-theme="light"] {
   /* Custom Tokens - PS1 Light Mode */
@@ -362,78 +370,75 @@ body {
   border-color: var(--border-color) !important;
 }
 
-[data-bs-theme="light"] #projects-grid.filter-all-active .project-card .card {
+#projects-grid.filter-all-active .project-card .card {
   border-width: 1px;
   border-color: var(--border-color) !important;
 }
 
-[data-bs-theme="light"]
-  #projects-grid.filter-foundational-active
+#projects-grid.filter-foundational-active
   .project-card[data-project-category="foundational"]
   .card {
   border-width: 2px;
-  border-color: var(--accent-yellow) !important;
+  border-color: var(--ps-yellow) !important;
 }
 
-[data-bs-theme="light"]
-  #projects-grid.filter-fullstack-active
+#projects-grid.filter-fullstack-active
   .project-card[data-project-category="fullstack"]
   .card {
   border-width: 2px;
-  border-color: var(--accent-red) !important;
+  border-color: var(--ps-red) !important;
 }
 
-[data-bs-theme="light"]
-  #projects-grid.filter-wordpress-active
+#projects-grid.filter-wordpress-active
   .project-card[data-project-category="wordpress"]
   .card {
   border-width: 2px;
-  border-color: var(--accent-primary) !important;
+  border-color: var(--ps-blue) !important;
 }
 
-[data-bs-theme="light"] #projects-grid.filter-foundational-active .project-card .btn.btn-primary {
-  --bs-btn-bg: var(--accent-yellow);
-  --bs-btn-border-color: var(--accent-yellow);
-  --bs-btn-hover-bg: var(--accent-yellow);
-  --bs-btn-hover-border-color: var(--accent-yellow);
-  --bs-btn-active-bg: var(--accent-yellow);
-  --bs-btn-active-border-color: var(--accent-yellow);
+#projects-grid.filter-foundational-active .project-card .btn.btn-primary {
+  --bs-btn-bg: var(--ps-yellow);
+  --bs-btn-border-color: var(--ps-yellow);
+  --bs-btn-hover-bg: var(--ps-yellow);
+  --bs-btn-hover-border-color: var(--ps-yellow);
+  --bs-btn-active-bg: var(--ps-yellow);
+  --bs-btn-active-border-color: var(--ps-yellow);
   --bs-btn-color: #212529;
   --bs-btn-hover-color: #212529;
   --bs-btn-active-color: #212529;
 }
 
-[data-bs-theme="light"] #projects-grid.filter-all-active .project-card .btn.btn-primary {
-  --bs-btn-bg: var(--accent-teal);
-  --bs-btn-border-color: var(--accent-teal);
-  --bs-btn-hover-bg: var(--accent-teal);
-  --bs-btn-hover-border-color: var(--accent-teal);
-  --bs-btn-active-bg: var(--accent-teal);
-  --bs-btn-active-border-color: var(--accent-teal);
+#projects-grid.filter-all-active .project-card .btn.btn-primary {
+  --bs-btn-bg: var(--ps-teal);
+  --bs-btn-border-color: var(--ps-teal);
+  --bs-btn-hover-bg: var(--ps-teal);
+  --bs-btn-hover-border-color: var(--ps-teal);
+  --bs-btn-active-bg: var(--ps-teal);
+  --bs-btn-active-border-color: var(--ps-teal);
   --bs-btn-color: #fff;
   --bs-btn-hover-color: #fff;
   --bs-btn-active-color: #fff;
 }
 
-[data-bs-theme="light"] #projects-grid.filter-fullstack-active .project-card .btn.btn-primary {
-  --bs-btn-bg: var(--accent-red);
-  --bs-btn-border-color: var(--accent-red);
-  --bs-btn-hover-bg: var(--accent-red);
-  --bs-btn-hover-border-color: var(--accent-red);
-  --bs-btn-active-bg: var(--accent-red);
-  --bs-btn-active-border-color: var(--accent-red);
+#projects-grid.filter-fullstack-active .project-card .btn.btn-primary {
+  --bs-btn-bg: var(--ps-red);
+  --bs-btn-border-color: var(--ps-red);
+  --bs-btn-hover-bg: var(--ps-red);
+  --bs-btn-hover-border-color: var(--ps-red);
+  --bs-btn-active-bg: var(--ps-red);
+  --bs-btn-active-border-color: var(--ps-red);
   --bs-btn-color: #fff;
   --bs-btn-hover-color: #fff;
   --bs-btn-active-color: #fff;
 }
 
-[data-bs-theme="light"] #projects-grid.filter-wordpress-active .project-card .btn.btn-primary {
-  --bs-btn-bg: var(--accent-primary);
-  --bs-btn-border-color: var(--accent-primary);
-  --bs-btn-hover-bg: var(--accent-primary);
-  --bs-btn-hover-border-color: var(--accent-primary);
-  --bs-btn-active-bg: var(--accent-primary);
-  --bs-btn-active-border-color: var(--accent-primary);
+#projects-grid.filter-wordpress-active .project-card .btn.btn-primary {
+  --bs-btn-bg: var(--ps-blue);
+  --bs-btn-border-color: var(--ps-blue);
+  --bs-btn-hover-bg: var(--ps-blue);
+  --bs-btn-hover-border-color: var(--ps-blue);
+  --bs-btn-active-bg: var(--ps-blue);
+  --bs-btn-active-border-color: var(--ps-blue);
   --bs-btn-color: #fff;
   --bs-btn-hover-color: #fff;
   --bs-btn-active-color: #fff;
@@ -533,90 +538,99 @@ body {
     color 0.2s ease;
 }
 
+#projects .project-tabs .filter-btn.btn-outline-primary {
+  --bs-btn-color: var(--text-primary);
+  --bs-btn-border-color: var(--border-color);
+  --bs-btn-hover-color: var(--text-primary);
+  --bs-btn-bg: var(--bg-surface);
+  --bs-btn-hover-bg: var(--bg-surface);
+  --bs-btn-active-bg: var(--bg-surface);
+  --bs-btn-active-color: var(--text-primary);
+}
+
 .btn-group .btn:hover,
 .btn-group .btn:focus-visible,
 .filter-btn:hover,
 .filter-btn:focus-visible {
-  border-color: var(--accent-primary);
   color: var(--text-primary);
 }
 
-[data-bs-theme="light"] #filter-all:hover,
-[data-bs-theme="light"] #filter-all:focus-visible {
-  border-color: var(--accent-teal);
+#filter-all:hover,
+#filter-all:focus-visible {
+  border-color: var(--ps-teal);
 }
 
-[data-bs-theme="light"] #filter-all {
-  --bs-btn-hover-border-color: var(--accent-teal);
-  --bs-btn-active-border-color: var(--accent-teal);
-  --bs-btn-active-bg: var(--accent-teal);
+#filter-all {
+  --bs-btn-hover-border-color: var(--ps-teal);
+  --bs-btn-active-border-color: var(--ps-teal);
+  --bs-btn-active-bg: var(--ps-teal);
   --bs-btn-active-color: #fff;
 }
 
-[data-bs-theme="light"] #filter-foundational:hover,
-[data-bs-theme="light"] #filter-foundational:focus-visible {
-  border-color: var(--accent-yellow);
+#filter-foundational:hover,
+#filter-foundational:focus-visible {
+  border-color: var(--ps-yellow);
 }
 
-[data-bs-theme="light"] #filter-foundational {
-  --bs-btn-hover-border-color: var(--accent-yellow);
-  --bs-btn-active-border-color: var(--accent-yellow);
-  --bs-btn-active-bg: var(--accent-yellow);
+#filter-foundational {
+  --bs-btn-hover-border-color: var(--ps-yellow);
+  --bs-btn-active-border-color: var(--ps-yellow);
+  --bs-btn-active-bg: var(--ps-yellow);
   --bs-btn-active-color: #212529;
 }
 
-[data-bs-theme="light"] #filter-fullstack:hover,
-[data-bs-theme="light"] #filter-fullstack:focus-visible {
-  border-color: var(--accent-red);
+#filter-fullstack:hover,
+#filter-fullstack:focus-visible {
+  border-color: var(--ps-red);
 }
 
-[data-bs-theme="light"] #filter-fullstack {
-  --bs-btn-hover-border-color: var(--accent-red);
-  --bs-btn-active-border-color: var(--accent-red);
-  --bs-btn-active-bg: var(--accent-red);
+#filter-fullstack {
+  --bs-btn-hover-border-color: var(--ps-red);
+  --bs-btn-active-border-color: var(--ps-red);
+  --bs-btn-active-bg: var(--ps-red);
   --bs-btn-active-color: #fff;
 }
 
-[data-bs-theme="light"] #filter-wordpress:hover,
-[data-bs-theme="light"] #filter-wordpress:focus-visible {
-  border-color: var(--accent-primary);
+#filter-wordpress:hover,
+#filter-wordpress:focus-visible {
+  border-color: var(--ps-blue);
 }
 
-[data-bs-theme="light"] #filter-wordpress {
-  --bs-btn-hover-border-color: var(--accent-primary);
-  --bs-btn-active-border-color: var(--accent-primary);
-  --bs-btn-active-bg: var(--accent-primary);
+#filter-wordpress {
+  --bs-btn-hover-border-color: var(--ps-blue);
+  --bs-btn-active-border-color: var(--ps-blue);
+  --bs-btn-active-bg: var(--ps-blue);
   --bs-btn-active-color: #fff;
 }
 
-[data-bs-theme="light"] #filter-all:is(.active, .btn-primary) {
-  background-color: var(--accent-teal) !important;
-  border-color: var(--accent-teal) !important;
+#filter-all:is(.active, .btn-primary) {
+  background-color: var(--ps-teal) !important;
+  border-color: var(--ps-teal) !important;
   color: #fff !important;
 }
 
-[data-bs-theme="light"] #filter-foundational:is(.active, .btn-primary) {
-  background-color: var(--accent-yellow) !important;
-  border-color: var(--accent-yellow) !important;
+#filter-foundational:is(.active, .btn-primary) {
+  background-color: var(--ps-yellow) !important;
+  border-color: var(--ps-yellow) !important;
   color: #212529 !important;
 }
 
-[data-bs-theme="light"] #filter-fullstack:is(.active, .btn-primary) {
-  background-color: var(--accent-red) !important;
-  border-color: var(--accent-red) !important;
+#filter-fullstack:is(.active, .btn-primary) {
+  background-color: var(--ps-red) !important;
+  border-color: var(--ps-red) !important;
   color: #fff !important;
 }
 
-[data-bs-theme="light"] #filter-wordpress:is(.active, .btn-primary) {
-  background-color: var(--accent-primary) !important;
-  border-color: var(--accent-primary) !important;
+#filter-wordpress:is(.active, .btn-primary) {
+  background-color: var(--ps-blue) !important;
+  border-color: var(--ps-blue) !important;
   color: #fff !important;
 }
 
 /* PS symbol indicator above active project tabs */
-[data-bs-theme="light"] .project-tabs .filter-btn::before {
+.project-tabs .filter-btn::before {
   position: absolute;
-  top: -18px;
+  top: -22px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 14px;
@@ -625,31 +639,31 @@ body {
   transition: opacity 0.25s ease;
 }
 
-[data-bs-theme="light"] .project-tabs .filter-btn:is(.active, .btn-primary)::before {
+.project-tabs .filter-btn:is(.active, .btn-primary)::before {
   opacity: 1;
-  animation: ps-float 2s ease-in-out infinite;
+  animation: ps-float-tabs 2s ease-in-out infinite;
 }
 
-[data-bs-theme="light"] .project-tabs #filter-all::before {
+.project-tabs #filter-all::before {
   content: "\25B3";
-  color: var(--accent-teal);
+  color: var(--ps-teal);
 }
 
-[data-bs-theme="light"] .project-tabs #filter-foundational::before {
+.project-tabs #filter-foundational::before {
   content: "\25A1";
-  color: var(--accent-yellow);
+  color: var(--ps-yellow);
   font-size: 16px;
 }
 
-[data-bs-theme="light"] .project-tabs #filter-fullstack::before {
+.project-tabs #filter-fullstack::before {
   content: "\25CB";
-  color: var(--accent-red);
+  color: var(--ps-red);
   font-size: 16px;
 }
 
-[data-bs-theme="light"] .project-tabs #filter-wordpress::before {
+.project-tabs #filter-wordpress::before {
   content: "\2716";
-  color: var(--accent-primary);
+  color: var(--ps-blue);
   font-size: 16px;
 }
 
@@ -663,11 +677,14 @@ body {
   }
 }
 
-[data-bs-theme="dark"] .project-tabs .btn.active,
-[data-bs-theme="dark"] .project-tabs .btn.btn-primary {
-  background-color: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: #f8f9fa;
+@keyframes ps-float-tabs {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
 
 .project-tech-badges {
