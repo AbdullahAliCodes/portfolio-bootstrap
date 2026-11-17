@@ -68,7 +68,7 @@
 
   /* PS animations (gated with motion-safe: in components) */
   --animate-ps-float: ps-float 2s ease-in-out infinite;
-  --animate-gradient-shift: gradient-shift 8s ease infinite;
+  --animate-gradient-shift: gradient-shift 4s ease infinite alternate;
 }
 
 /* ------------------------------------------------------------------ */
@@ -209,19 +209,28 @@
 /* PS theme utilities                                                  */
 /* ------------------------------------------------------------------ */
 
-/* Animated hero backdrop (port of .banner-wrap::before), fading out at the bottom. */
+/* Animated hero backdrop (port of .banner-wrap::before), fading out at the bottom.
+   The legacy effect animated background-position on a 400%-wide gradient, which repaints
+   every frame. Here a 400%-wide layer is translated instead (compositor-only, same look). */
 @utility hero-gradient {
-  background-image: linear-gradient(
-    120deg,
-    var(--hero-1) 0%,
-    var(--hero-2) 20%,
-    var(--hero-3) 40%,
-    var(--hero-2) 60%,
-    var(--hero-1) 100%
-  );
-  background-size: 400% 400%;
-  animation: var(--animate-gradient-shift);
+  overflow: hidden;
   mask-image: linear-gradient(to bottom, black 55%, transparent);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 400%;
+    background-image: linear-gradient(
+      120deg,
+      var(--hero-1) 0%,
+      var(--hero-2) 20%,
+      var(--hero-3) 40%,
+      var(--hero-2) 60%,
+      var(--hero-1) 100%
+    );
+    animation: var(--animate-gradient-shift);
+    will-change: transform;
+  }
 }
 
 /* Scroll progress bar: teal → red → blue → yellow. */
@@ -235,8 +244,9 @@
 }
 
 @keyframes blur-fade {
+  /* Starts just above 0: Chrome skips LCP candidates whose first paint is fully transparent. */
   from {
-    opacity: 0;
+    opacity: 0.1;
     filter: blur(6px);
     transform: translateY(6px);
   }
@@ -263,19 +273,16 @@
 }
 
 @keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
+  from {
+    transform: translateX(0);
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  to {
+    transform: translateX(-75%);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-gradient,
+  .hero-gradient::before,
   .animate-ps-float,
   .animate-blur-fade,
   .animate-caret {

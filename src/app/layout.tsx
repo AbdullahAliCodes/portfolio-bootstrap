@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { BackToTop } from "@/components/layout/back-to-top";
@@ -8,6 +8,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { Providers } from "@/components/providers";
 import { legacyThemeMigrationScript } from "@/components/theme-provider";
+import { profile, site } from "@/data/portfolio";
+import { palette } from "@/lib/palette";
 import "./globals.css";
 
 const inter = Inter({
@@ -26,8 +28,32 @@ const novaKlasse = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Abdullah Ali",
-  description: "Portfolio of Abdullah Ali.",
+  metadataBase: new URL(site.url),
+  title: { default: `${site.title} · ${profile.title}`, template: `%s | ${site.title}` },
+  description: site.description,
+  authors: [{ name: profile.name }],
+  creator: profile.name,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: site.title,
+    title: `${site.title} · ${profile.title}`,
+    description: site.description,
+    locale: "en_ZA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.title} · ${profile.title}`,
+    description: site.description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: palette.dark.background },
+    { media: "(prefers-color-scheme: light)", color: palette.light.background },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

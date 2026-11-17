@@ -18,7 +18,20 @@ const hoverBorder = {
  * Sanyi card anatomy: media on top (zooms on hover), title, small tech badges, link pills.
  * A PS symbol in the top-right marks the category; the border tints to its colour on hover.
  */
-export function ProjectCard({ project, priority = false }: { project: Project; priority?: boolean }) {
+export function ProjectCard({
+  project,
+  highPriority = false,
+  headingLevel = "h3",
+}: {
+  project: Project;
+  /**
+   * Likely LCP image: load eagerly at high priority. For themed thumbnails this fetches both
+   * variants (~15 KB each), so only use it on the first card.
+   */
+  highPriority?: boolean;
+  headingLevel?: "h2" | "h3";
+}) {
+  const Heading = headingLevel;
   const shape = categoryShape[project.category];
   const categoryLabel = projectCategories.find((c) => c.key === project.category)?.label ?? project.category;
   const shown = project.tech.slice(0, MAX_CHIPS);
@@ -36,7 +49,8 @@ export function ProjectCard({ project, priority = false }: { project: Project; p
           thumbnail={project.thumbnail}
           alt={project.thumbnailAlt}
           fill
-          priority={priority}
+          loading={highPriority ? "eager" : "lazy"}
+          fetchPriority={highPriority ? "high" : undefined}
           sizes="(min-width: 1024px) 280px, (min-width: 640px) 50vw, 100vw"
           className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
         />
@@ -46,7 +60,7 @@ export function ProjectCard({ project, priority = false }: { project: Project; p
       </div>
 
       <div className="flex flex-1 flex-col gap-3 p-4">
-        <h3 className="text-sm font-semibold leading-snug">{project.title}</h3>
+        <Heading className="text-sm font-semibold leading-snug">{project.title}</Heading>
 
         <ul className="flex flex-wrap gap-1" aria-label="Tech stack">
           {shown.map((t) => (

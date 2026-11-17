@@ -341,7 +341,12 @@ export const sections = {
   experience: { eyebrow: "experience", title: "Work" },
   education: { eyebrow: "education", title: "Education" },
   achievements: { eyebrow: "achievements", title: "Achievements", placeholder: "coming soon", placeholderHint: "now loading…" },
-  contributions: { eyebrow: "open source", title: "GitHub Contributions", fallback: "Couldn't load the contribution graph right now." },
+  contributions: {
+    eyebrow: "open source",
+    title: "GitHub Contributions",
+    regionLabel: "Contribution calendar (scrollable)",
+    fallback: "Couldn't load the contribution graph right now.",
+  },
   contact: {
     eyebrow: "contact",
     title: "Want to work with me?",

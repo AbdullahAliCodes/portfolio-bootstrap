@@ -1,7 +1,8 @@
 # Portfolio: conventions
 - Next.js App Router + TypeScript + Tailwind + shadcn/ui + motion. No Bootstrap, no jQuery.
 - ALL content lives in src/data/portfolio.ts. Never hard-code copy in components.
-- Theme colors only through CSS variables / Tailwind tokens (bg-background, text-muted-foreground, text-ps-teal…). No raw hex in components. The palette comes from the original site's cover.css.
+- Theme colors only through CSS variables / Tailwind tokens (bg-background, text-muted-foreground, text-ps-teal…). No raw hex in components. The palette comes from the original site's cover.css. The only hex mirror is src/lib/palette.ts, for generated images / theme-color that can't read CSS vars (plus app/icon.svg).
+- PS colors are not text-safe on the light grey surfaces: use the `-ink` variants for TEXT (text-ps-teal-ink, text-ps-yellow-ink…) and the plain ones for symbols, borders and fills.
 - PS shapes: triangle=teal=home, circle=red=about, cross=blue=projects, square=yellow=contact. Use <PsSymbol>/<PsButton>/<PsEyebrow>.
 - Layout: single column `mx-auto max-w-4xl px-6`, sections spaced `space-y-12 sm:space-y-14`, every section uses <Section> + <BlurFade>.
 - Never add a phone number. Never invent dates, descriptions or achievements.
@@ -10,4 +11,7 @@
 - The old site is in legacy/ for reference only. Don't import from it.
 - The master redesign plan is REDESIGN_PLAN.md (phased; stop after each phase).
 - This Next.js version may differ from training data: see AGENTS.md and check node_modules/next/dist/docs/ before using unfamiliar APIs.
-- shadcn preset is `base-nova` (Base UI primitives, not Radix).
+- shadcn preset is `base-nova` (Base UI primitives, not Radix): use the `render` prop, not `asChild`.
+- Cache Components is on: no `new Date()` / `Math.random()` in the prerendered tree (see components/layout/current-year.tsx), and avoid `useSearchParams` (needs Suspense; see project-browser.tsx).
+- Above-the-fold content uses `<BlurFade immediate>` / `<Section immediate>` (CSS reveal) so LCP isn't gated on hydration.
+- Set NEXT_PUBLIC_SITE_URL in production (metadata, sitemap, robots).

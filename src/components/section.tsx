@@ -15,6 +15,8 @@ type SectionProps = {
   /** Optional element on the right of the header (e.g. a link). */
   action?: React.ReactNode;
   headingLevel?: "h1" | "h2";
+  /** Above-the-fold: reveal with CSS on first paint instead of on scroll (see BlurFade). */
+  immediate?: boolean;
   className?: string;
   children: React.ReactNode;
 };
@@ -28,13 +30,14 @@ export function Section({
   index = 0,
   action,
   headingLevel = "h2",
+  immediate = false,
   className,
   children,
 }: SectionProps) {
   const Heading = headingLevel;
   return (
     <section id={id} data-nav={nav} aria-labelledby={`${id}-title`} className={cn("scroll-mt-24", className)}>
-      <BlurFade index={index} className="mb-5 flex items-end justify-between gap-4">
+      <BlurFade immediate={immediate} index={index} className="mb-5 flex items-end justify-between gap-4">
         <div className="space-y-1.5">
           <PsEyebrow shape={eyebrow.shape} label={eyebrow.label} />
           <Heading id={`${id}-title`} className="text-xl font-bold tracking-tight">
@@ -43,7 +46,9 @@ export function Section({
         </div>
         {action}
       </BlurFade>
-      <BlurFade index={index + 1}>{children}</BlurFade>
+      <BlurFade immediate={immediate} index={index + 1}>
+        {children}
+      </BlurFade>
     </section>
   );
 }

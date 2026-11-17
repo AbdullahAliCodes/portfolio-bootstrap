@@ -49,7 +49,8 @@ export function Hero() {
               src={profile.avatar.src}
               alt={profile.avatar.alt}
               fill
-              priority
+              loading="eager"
+              fetchPriority="high"
               sizes="(min-width: 640px) 144px, 96px"
               className="object-cover"
             />
@@ -58,7 +59,7 @@ export function Hero() {
             {profile.status.map((s) => (
               <li
                 key={s.label}
-                className="group inline-flex w-fit items-center gap-2 rounded-full border border-border/60 bg-card/40 py-1 pl-1 pr-3 text-xs text-foreground backdrop-blur-sm"
+                className="group inline-flex w-fit items-center gap-2 rounded-full border border-border/60 bg-card/60 py-1 pl-1 pr-3 text-xs text-foreground"
               >
                 <PsButton shape={s.shape} />
                 {s.label}
