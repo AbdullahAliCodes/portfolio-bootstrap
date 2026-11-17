@@ -190,6 +190,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Full-bleed decorations (hero gradient) must not cause sideways scroll. */
+    overflow-x: clip;
   }
   /* Sanyi-style dot grid across the whole page, fixed behind content. */
   body::before {
@@ -240,6 +242,16 @@
   }
 }
 
+@utility animate-caret {
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @keyframes ps-float {
   0%,
   100% {
@@ -265,7 +277,8 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-gradient,
   .animate-ps-float,
-  .animate-blur-fade {
+  .animate-blur-fade,
+  .animate-caret {
     animation: none !important;
   }
 }

@@ -12,6 +12,8 @@ type PsButtonProps = {
   size?: keyof typeof sizes;
   /** Force the shape color in dark mode too (e.g. the item is selected). */
   active?: boolean;
+  /** "inverse": white outline for use on a filled (primary) button; ignores shape colours. */
+  tone?: "default" | "inverse";
   className?: string;
 };
 
@@ -22,7 +24,7 @@ type PsButtonProps = {
  * Light mode: the shape's color. Dark mode: muted, switching to the shape's color when the
  * badge (or a parent with `group`) is hovered, or when `active`.
  */
-export function PsButton({ shape, size = "sm", active = false, className }: PsButtonProps) {
+export function PsButton({ shape, size = "sm", active = false, tone = "default", className }: PsButtonProps) {
   const meta = psShapeMeta[shape];
   const s = sizes[size];
   return (
@@ -31,10 +33,9 @@ export function PsButton({ shape, size = "sm", active = false, className }: PsBu
       className={cn(
         "inline-flex shrink-0 items-center justify-center rounded-full border-2 border-current transition-colors duration-200",
         s.box,
-        meta.text,
-        active ? meta.darkText : "dark:text-muted-foreground",
-        meta.darkHoverText,
-        meta.darkGroupHoverText,
+        tone === "inverse"
+          ? "text-current"
+          : [meta.text, active ? meta.darkText : "dark:text-muted-foreground", meta.darkHoverText, meta.darkGroupHoverText],
         className,
       )}
     >
