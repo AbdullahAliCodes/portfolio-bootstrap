@@ -73,7 +73,7 @@ type TechChipProps = {
 
 /** A small rounded chip with the tech's logo and name. */
 export function TechChip({ name, size = "sm", className }: TechChipProps) {
-  const Icon = getTechIcon(name);
+  const Icon = techIcons[name] ?? Code;
   return (
     <span
       className={cn(
