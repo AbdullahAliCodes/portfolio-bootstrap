@@ -1,56 +1,36 @@
-# Abdullah Ali Portfolio (Bootstrap)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A responsive, two-page personal portfolio built with Bootstrap 5, custom theme tokens, and lightweight vanilla JavaScript interactions.
+## Getting Started
 
-## Live Scope
+First, run the development server:
 
-- **Home page:** hero, about, contact sections (`index.html`)
-- **Projects page:** categorized portfolio cards with client-side filtering (`projects.html`)
-- **Shared logic:** dark/light theme persistence, nav behavior, project thumbnail switching, typing effect (`script.js`)
-- **Shared styling:** token-driven theme system + component styling (`cover.css`)
-
-## Why This Project Exists
-
-This portfolio is designed to showcase projects, communicate personal brand, and provide a fast, no-build static site that is easy to deploy and maintain.
-
-## Core Features
-
-- Persistent **light/dark mode** with `localStorage`
-- Theme-aware UI updates:
-  - Bootstrap theme attribute (`data-bs-theme`)
-  - Browser UI color (`meta[name="theme-color"]`)
-  - Project card thumbnails swapped per theme
-- Responsive navbar:
-  - Collapses on mobile
-  - Auto-closes when a nav link is selected
-  - Gains a docked/scrolled style after leaving hero section
-- Hero typing effect with `typed.js`
-- Project filtering (`All`, `Foundational`, `Capstone`) without reloading
-- Consistent visual system powered by CSS custom properties
-
-## Tech Stack
-
-- **HTML5**
-- **CSS3** (custom properties + Bootstrap overrides)
-- **JavaScript (ES6+)**
-- **Bootstrap 5.3**
-- **Bootstrap Icons**
-- **Typed.js** (CDN)
-
-## Project Structure
-
-```text
-portfolio-bootstrap/
-├── index.html               # Home page (hero/about/contact)
-├── projects.html            # Projects listing + filters
-├── cover.css                # Global styles + theme tokens + sections
-├── script.js                # Theme, interactions, filtering, typed text
-├── assets/
-│   ├── dist/                # Local Bootstrap distribution
-│   │   ├── css/
-│   │   └── js/
-│   ├── fonts/               # Custom fonts (Nova Klasse + others)
-│   ├── images/              # Headshots + project thumbnails
-│   └── brand/               # Bootstrap brand assets
-└── .vscode/                 # Local editor settings
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
