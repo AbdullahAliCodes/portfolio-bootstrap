@@ -107,7 +107,8 @@ export const site = {
   title: "Abdullah Ali",
   description:
     "Abdullah Ali: aspiring software engineer and third-year Computer Science student at Wits. Full stack projects, skills and contact.",
-  tagline: "built with next.js · press ✕ to continue",
+  /** Footer tagline; a ✕ PsSymbol is rendered between the two parts. */
+  tagline: { before: "built with next.js · press", after: "to continue" },
   githubUsername: "AbdullahAliCodes",
 } as const;
 

@@ -12,8 +12,13 @@ export const psShapeMeta: Record<
   PsShape,
   {
     name: string;
-    /** Text color (SVG uses currentColor). */
+    /** Shape color (SVG uses currentColor). Not text-safe on light surfaces. */
     text: string;
+    /** Text-safe variant of the shape color (≥4.5:1). */
+    ink: string;
+    hoverInk: string;
+    darkHoverRing: string;
+    focusRing: string;
     /** Dark-mode-only text color, for hover / active states. */
     darkText: string;
     darkHoverText: string;
@@ -27,6 +32,10 @@ export const psShapeMeta: Record<
   triangle: {
     name: "Triangle",
     text: "text-ps-teal",
+    ink: "text-ps-teal-ink",
+    hoverInk: "hover:text-ps-teal-ink",
+    darkHoverRing: "hover:ring-ps-teal",
+    focusRing: "focus-visible:ring-ps-teal",
     darkText: "dark:text-ps-teal",
     darkHoverText: "dark:hover:text-ps-teal",
     darkGroupHoverText: "dark:group-hover:text-ps-teal",
@@ -38,6 +47,10 @@ export const psShapeMeta: Record<
   circle: {
     name: "Circle",
     text: "text-ps-red",
+    ink: "text-ps-red-ink",
+    hoverInk: "hover:text-ps-red-ink",
+    darkHoverRing: "hover:ring-ps-red",
+    focusRing: "focus-visible:ring-ps-red",
     darkText: "dark:text-ps-red",
     darkHoverText: "dark:hover:text-ps-red",
     darkGroupHoverText: "dark:group-hover:text-ps-red",
@@ -49,6 +62,10 @@ export const psShapeMeta: Record<
   cross: {
     name: "Cross",
     text: "text-ps-blue",
+    ink: "text-ps-blue-ink",
+    hoverInk: "hover:text-ps-blue-ink",
+    darkHoverRing: "hover:ring-ps-blue",
+    focusRing: "focus-visible:ring-ps-blue",
     darkText: "dark:text-ps-blue",
     darkHoverText: "dark:hover:text-ps-blue",
     darkGroupHoverText: "dark:group-hover:text-ps-blue",
@@ -60,6 +77,10 @@ export const psShapeMeta: Record<
   square: {
     name: "Square",
     text: "text-ps-yellow",
+    ink: "text-ps-yellow-ink",
+    hoverInk: "hover:text-ps-yellow-ink",
+    darkHoverRing: "hover:ring-ps-yellow",
+    focusRing: "focus-visible:ring-ps-yellow",
     darkText: "dark:text-ps-yellow",
     darkHoverText: "dark:hover:text-ps-yellow",
     darkGroupHoverText: "dark:group-hover:text-ps-yellow",

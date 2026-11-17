@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-import { ThemeProvider, legacyThemeMigrationScript } from "@/components/theme-provider";
+import { BackToTop } from "@/components/layout/back-to-top";
+import { Dock } from "@/components/layout/dock";
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+import { ScrollProgress } from "@/components/layout/scroll-progress";
+import { Providers } from "@/components/providers";
+import { legacyThemeMigrationScript } from "@/components/theme-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,7 +42,22 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: legacyThemeMigrationScript }} />
       </head>
       <body className="flex min-h-full flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+        <Providers>
+          <a
+            href="#main"
+            className="fixed left-4 top-3 z-[70] -translate-y-16 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition-transform focus-visible:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            Skip to content
+          </a>
+          <ScrollProgress />
+          <Navbar />
+          <main id="main" tabIndex={-1} className="mx-auto w-full max-w-4xl flex-1 px-6 pb-24 pt-24 outline-none sm:pt-28">
+            {children}
+          </main>
+          <Footer />
+          <Dock />
+          <BackToTop />
+        </Providers>
       </body>
     </html>
   );

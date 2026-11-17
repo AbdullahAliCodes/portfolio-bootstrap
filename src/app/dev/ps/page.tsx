@@ -57,7 +57,7 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
 
 export default function PsDevPage() {
   return (
-    <main className="mx-auto w-full max-w-4xl space-y-12 px-6 py-12 sm:space-y-14">
+    <div className="space-y-12 sm:space-y-14">
       <header className="flex items-center justify-between">
         <div>
           <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60">dev only</p>
@@ -189,6 +189,6 @@ export default function PsDevPage() {
           </div>
         </div>
       </Block>
-    </main>
+    </div>
   );
 }

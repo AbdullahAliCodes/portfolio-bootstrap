@@ -15,7 +15,7 @@ export function PsEyebrow({ shape, label, className }: PsEyebrowProps) {
   return (
     <p className={cn("flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.2em]", className)}>
       <PsSymbol shape={shape} size={10} strokeWidth={3.5} />
-      <span className="text-muted-foreground/60">{label}</span>
+      <span className="text-muted-foreground">{label}</span>
     </p>
   );
 }
