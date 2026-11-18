@@ -4,7 +4,8 @@
 - Theme colors only through CSS variables / Tailwind tokens (bg-background, text-muted-foreground, text-ps-teal…). No raw hex in components. The palette comes from the original site's cover.css. The only hex mirror is src/lib/palette.ts, for generated images / theme-color that can't read CSS vars (plus app/icon.svg).
 - PS colors are not text-safe on the light grey surfaces: use the `-ink` variants for TEXT (text-ps-teal-ink, text-ps-yellow-ink…) and the plain ones for symbols, borders and fills.
 - PS shapes: triangle=teal=home, circle=red=about, cross=blue=projects, square=yellow=contact. Use <PsSymbol>/<PsButton>/<PsEyebrow>.
-- Layout: single column `mx-auto max-w-4xl px-6`, sections spaced `space-y-12 sm:space-y-14`, every section uses <Section> + <BlurFade>.
+- Layout: single column via the `page-container` utility (max-w-5xl, px-6) on navbar, main and footer; home sections spaced `space-y-20 sm:space-y-28`; every section uses <Section> + <BlurFade>.
+- Cards use the `surface-card` utility (see-through, faint border, no shadow); grids `gap-5 sm:gap-6`, card padding `p-6 sm:p-7`. Tech chips are solid borderless pills (<TechChip>).
 - Never add a phone number. Never invent dates, descriptions or achievements.
 - Respect prefers-reduced-motion. Icon-only buttons need aria-label. Decorative symbols aria-hidden.
 - Before every commit: npm run lint && npm run build.

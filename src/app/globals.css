@@ -233,6 +233,25 @@
   }
 }
 
+/* Shared page column: navbar, main and footer use it so their edges line up. */
+@utility page-container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-5xl);
+  padding-inline: --spacing(6);
+}
+
+/* Sanyi-style see-through card: the dot grid shows through, a faint border defines it.
+   Light mode needs a slightly stronger border to read on the grey console background. */
+@utility surface-card {
+  border-radius: var(--radius-xl);
+  border: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
+  background-color: color-mix(in oklab, var(--card) 10%, transparent);
+  @variant dark {
+    border-color: color-mix(in oklab, var(--border) 40%, transparent);
+  }
+}
+
 /* Scroll progress bar: teal → red → blue → yellow. */
 @utility ps-gradient-x {
   background-image: linear-gradient(90deg, var(--ps-teal), var(--ps-red), var(--ps-blue), var(--ps-yellow));

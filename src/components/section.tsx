@@ -37,10 +37,10 @@ export function Section({
   const Heading = headingLevel;
   return (
     <section id={id} data-nav={nav} aria-labelledby={`${id}-title`} className={cn("scroll-mt-24", className)}>
-      <BlurFade immediate={immediate} index={index} className="mb-5 flex items-end justify-between gap-4">
-        <div className="space-y-1.5">
+      <BlurFade immediate={immediate} index={index} className="mb-6 flex items-end justify-between gap-4 sm:mb-8">
+        <div className="space-y-3">
           <PsEyebrow shape={eyebrow.shape} label={eyebrow.label} />
-          <Heading id={`${id}-title`} className="text-xl font-bold tracking-tight">
+          <Heading id={`${id}-title`} className="text-2xl font-bold tracking-tight sm:text-3xl">
             {title}
           </Heading>
         </div>

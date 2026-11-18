@@ -57,7 +57,7 @@ export function ProjectBrowser() {
       {visible.length === 0 ? (
         <p className="text-sm text-muted-foreground">{sections.allProjects.empty}</p>
       ) : (
-        <motion.ul layout className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.ul layout className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           <AnimatePresence mode="popLayout" initial={false}>
             {visible.map((p, i) => (
               <motion.li

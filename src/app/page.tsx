@@ -9,7 +9,7 @@ import { Stack } from "@/components/sections/stack";
 
 export default function Home() {
   return (
-    <div className="space-y-12 sm:space-y-14">
+    <div className="space-y-20 sm:space-y-28">
       <Hero />
       <Stack />
       <FeaturedProjects />

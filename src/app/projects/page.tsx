@@ -26,7 +26,7 @@ export default function ProjectsPage() {
       eyebrow={{ shape: "cross", label: sections.allProjects.eyebrow }}
       title={sections.allProjects.title}
     >
-      <p className="-mt-2 mb-6 max-w-lg text-sm leading-relaxed text-muted-foreground">{sections.allProjects.intro}</p>
+      <p className="-mt-2 mb-8 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">{sections.allProjects.intro}</p>
       {/* Prerendered with every project; a ?filter= in the URL is applied on hydration. */}
       <ProjectBrowser />
     </Section>
