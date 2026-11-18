@@ -24,8 +24,10 @@ export type StatusChip = {
 
 export type Profile = {
   name: string;
-  /** Lowercase hero display name. */
+  /** Lowercase display name (footer, OG image). */
   displayName: string;
+  /** Hero headline. */
+  greeting: string;
   title: string;
   /** Static prefix of the hero meta line, before the typed role. */
   metaPrefix: string;
@@ -126,6 +128,7 @@ export const nav: NavItem[] = [
 export const profile: Profile = {
   name: "Abdullah Ali",
   displayName: "abdullah ali",
+  greeting: "hi, i'm abdullah",
   title: "Full Stack Developer",
   metaPrefix: "third-year cs @ wits · ",
   roles: ["student.", "aspiring software engineer.", "tech enthusiast."],

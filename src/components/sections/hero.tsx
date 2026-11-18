@@ -5,7 +5,10 @@ import { SocialLinks } from "@/components/social-links";
 import { Typewriter } from "@/components/typewriter";
 import { profile } from "@/data/portfolio";
 
-/** Hero: Nova Klasse name, typed meta line, bio, socials; avatar + PS status chips on the right. */
+/**
+ * Hero: Nova Klasse greeting, typed meta line, bio, socials; on the right a white-ringed
+ * avatar with the PS status chips overlapping its bottom edge, centred against the text.
+ */
 export function Hero() {
   return (
     <section id="home" data-nav="home" aria-labelledby="home-title" className="relative scroll-mt-24 pb-4 sm:pb-10">
@@ -22,8 +25,8 @@ export function Hero() {
               <PsSymbol shape="triangle" size={10} strokeWidth={3.5} />
               {profile.title}
             </p>
-            <h1 id="home-title" className="font-display text-5xl leading-[0.9] lowercase sm:text-7xl lg:text-[5.25rem]">
-              {profile.displayName}
+            <h1 id="home-title" className="font-display text-5xl leading-[0.95] lowercase sm:text-6xl lg:text-[4rem]">
+              {profile.greeting}
             </h1>
             {/* min-height: the longest typed role wraps on phones; reserve the line to avoid layout shift */}
             <p className="min-h-12 text-base font-semibold text-foreground sm:min-h-7 sm:text-lg">
@@ -43,23 +46,23 @@ export function Hero() {
           </BlurFade>
         </div>
 
-        <BlurFade immediate index={1} className="order-1 flex flex-row items-center gap-4 sm:order-2 sm:flex-col sm:items-end">
-          <div className="relative size-24 shrink-0 overflow-hidden rounded-full border border-border/60 bg-muted shadow-lg shadow-black/10 sm:size-40">
+        <BlurFade immediate index={1} className="order-1 flex flex-row items-center gap-4 sm:order-2 sm:flex-col sm:gap-0 sm:self-center">
+          <div className="relative size-24 shrink-0 overflow-hidden rounded-full border-[3px] border-white bg-muted shadow-xl shadow-black/25 sm:size-44">
             <Image
               src={profile.avatar.src}
               alt={profile.avatar.alt}
               fill
               loading="eager"
               fetchPriority="high"
-              sizes="(min-width: 640px) 160px, 96px"
+              sizes="(min-width: 640px) 176px, 96px"
               className="object-cover"
             />
           </div>
-          <ul className="flex flex-col gap-2 sm:items-end" aria-label="Currently">
+          <ul className="relative flex flex-col gap-2 sm:-mt-4 sm:items-center" aria-label="Currently">
             {profile.status.map((s) => (
               <li
                 key={s.label}
-                className="group inline-flex w-fit items-center gap-2 rounded-full border border-border/60 bg-card/60 py-1 pl-1 pr-3 text-xs text-foreground sm:pr-3.5 sm:text-sm"
+                className="group inline-flex w-fit items-center gap-2 rounded-full border border-border/60 bg-card/95 py-1 pl-1 shadow-sm pr-3 text-xs text-foreground sm:pr-3.5 sm:text-sm"
               >
                 <PsButton shape={s.shape} />
                 {s.label}
