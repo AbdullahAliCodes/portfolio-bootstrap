@@ -7,7 +7,7 @@ import { CurrentYear } from "./current-year";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-border/50">
-      <div className="mx-auto flex max-w-4xl flex-col gap-8 px-6 pb-28 pt-10 sm:pb-24">
+      <div className="page-container flex flex-col gap-8 pb-28 pt-12 sm:pb-24">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="space-y-1.5">
             <p className="font-display text-xl lowercase">{profile.displayName}</p>

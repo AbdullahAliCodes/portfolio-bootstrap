@@ -77,7 +77,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </a>
           <ScrollProgress />
           <Navbar />
-          <main id="main" tabIndex={-1} className="mx-auto w-full max-w-4xl flex-1 px-6 pb-24 pt-24 outline-none sm:pt-28">
+          <main id="main" tabIndex={-1} className="page-container flex-1 pb-28 pt-24 outline-none sm:pb-36 sm:pt-32">
             {children}
           </main>
           <Footer />

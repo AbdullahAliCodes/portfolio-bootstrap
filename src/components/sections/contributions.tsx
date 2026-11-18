@@ -31,7 +31,7 @@ export function Contributions({ index = 0 }: { index?: number }) {
         tabIndex={0}
         role="region"
         aria-label={sections.contributions.regionLabel}
-        className="overflow-x-auto rounded-xl border border-border/50 bg-card/30 p-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring [&_.react-activity-calendar\_\_scroll-container]:overflow-visible!"
+        className="surface-card overflow-x-auto p-6 sm:p-7 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring [&_.react-activity-calendar\_\_scroll-container]:overflow-visible!"
       >
         <ContributionsCalendar username={site.githubUsername} fallback={sections.contributions.fallback} />
       </div>

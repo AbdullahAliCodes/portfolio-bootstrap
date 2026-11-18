@@ -29,7 +29,7 @@ export function Navbar() {
         scrolled ? "border-border/50 bg-background/75 backdrop-blur-md" : "border-transparent",
       )}
     >
-      <nav aria-label="Main" className="mx-auto flex h-16 max-w-4xl items-center justify-between px-6">
+      <nav aria-label="Main" className="page-container flex h-16 items-center justify-between">
         <Link
           href="/#home"
           aria-label="Home"

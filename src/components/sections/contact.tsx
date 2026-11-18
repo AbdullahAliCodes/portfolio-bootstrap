@@ -5,9 +5,9 @@ import { profile, sections } from "@/data/portfolio";
 export function Contact({ index = 0 }: { index?: number }) {
   return (
     <Section id="contact" nav="contact" index={index} eyebrow={{ shape: "square", label: sections.contact.eyebrow }} title={sections.contact.title}>
-      <div className="rounded-xl border border-border/50 bg-card/30 p-6">
-        <p className="max-w-lg text-sm leading-relaxed text-muted-foreground">{sections.contact.copy}</p>
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
+      <div className="surface-card p-6 sm:p-7">
+        <p className="max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">{sections.contact.copy}</p>
+        <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3">
           {/* PS "✕ to confirm" */}
           <a
             href={`mailto:${profile.email}`}

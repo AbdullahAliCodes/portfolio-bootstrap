@@ -5,22 +5,22 @@ export type CompactItem = { title: string; badge?: string; line?: string };
 /** Sanyi-style compact list: icon tile, title + small badge, muted role line. */
 export function CompactList({ items, icon: Icon }: { items: CompactItem[]; icon: ComponentType<{ className?: string }> }) {
   return (
-    <ul className="divide-y divide-border/40 overflow-hidden rounded-xl border border-border/50 bg-card/30">
+    <ul className="surface-card divide-y divide-border/40 overflow-hidden">
       {items.map((item) => (
-        <li key={item.title} className="flex items-start gap-3 p-4 transition-colors hover:bg-card/50">
-          <span className="mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-lg border border-border/60 bg-background/40 text-muted-foreground">
-            <Icon className="size-4" aria-hidden />
+        <li key={item.title} className="flex items-start gap-4 p-6 sm:p-7">
+          <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted/80 text-muted-foreground dark:bg-muted/70">
+            <Icon className="size-5" aria-hidden />
           </span>
-          <div className="min-w-0 space-y-0.5">
-            <p className="flex flex-wrap items-center gap-2 text-sm font-semibold">
+          <div className="min-w-0 space-y-1">
+            <p className="flex flex-wrap items-center gap-2.5 text-base font-semibold sm:text-lg">
               {item.title}
               {item.badge && (
-                <span className="rounded-md border border-border/60 bg-background/40 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                <span className="rounded-md bg-muted/80 px-2 py-0.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground dark:bg-muted/70">
                   {item.badge}
                 </span>
               )}
             </p>
-            {item.line && <p className="text-sm text-muted-foreground">{item.line}</p>}
+            {item.line && <p className="text-sm text-muted-foreground sm:text-base">{item.line}</p>}
           </div>
         </li>
       ))}

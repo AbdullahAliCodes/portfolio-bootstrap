@@ -77,12 +77,12 @@ export function TechChip({ name, size = "sm", className }: TechChipProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-background/40 text-muted-foreground",
-        size === "sm" ? "px-2 py-1 text-xs" : "px-1.5 py-0.5 text-[11px]",
+        "inline-flex items-center rounded-lg bg-muted/80 font-medium text-foreground dark:bg-muted/70",
+        size === "sm" ? "gap-2 px-3 py-1.5 text-sm" : "gap-1.5 px-2.5 py-1 text-xs",
         className,
       )}
     >
-      <Icon aria-hidden className={size === "sm" ? "size-3.5 shrink-0" : "size-3 shrink-0"} />
+      <Icon aria-hidden className={size === "sm" ? "size-4 shrink-0" : "size-3.5 shrink-0"} />
       {name}
     </span>
   );
