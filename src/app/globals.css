@@ -1,0 +1,291 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Class-based dark mode (next-themes puts `.dark` on <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  /* Fonts (variables set by next/font in layout.tsx) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-nova-klasse), var(--font-inter), sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* shadcn semantic tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* PlayStation palette: text-ps-teal, bg-ps-red/10, border-ps-blue… */
+  --color-ps-teal: var(--ps-teal);
+  --color-ps-red: var(--ps-red);
+  --color-ps-blue: var(--ps-blue);
+  --color-ps-yellow: var(--ps-yellow);
+  --color-ps-pink: var(--ps-pink);
+  /* Text-safe ("ink") variants: ≥4.5:1 on background and card in each theme */
+  --color-ps-teal-ink: var(--ps-teal-ink);
+  --color-ps-red-ink: var(--ps-red-ink);
+  --color-ps-blue-ink: var(--ps-blue-ink);
+  --color-ps-yellow-ink: var(--ps-yellow-ink);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* PS animations (gated with motion-safe: in components) */
+  --animate-ps-float: ps-float 2s ease-in-out infinite;
+  --animate-gradient-shift: gradient-shift 4s ease infinite alternate;
+}
+
+/* ------------------------------------------------------------------ */
+/* Palette: ported from legacy/cover.css                               */
+/* ------------------------------------------------------------------ */
+
+/* Light: PS1 grey console */
+:root {
+  --ps-teal: #01aea0;
+  --ps-red: #ff0021;
+  --ps-blue: #006eb8;
+  --ps-yellow: #ffc501;
+  --ps-pink: #ffa2d1;
+  /* PS colors darkened just enough for text on the grey console surfaces */
+  --ps-teal-ink: #016c63;
+  --ps-red-ink: #c20019;
+  --ps-blue-ink: #0062a4;
+  --ps-yellow-ink: #755b00;
+
+  --background: #dcdcdc;
+  --foreground: #2b2b36;
+  --card: #ebebef;
+  --card-foreground: #2b2b36;
+  --popover: #ebebef;
+  --popover-foreground: #2b2b36;
+  --primary: #006eb8;
+  --primary-hover: #005086;
+  --primary-foreground: #ffffff;
+  --secondary: #ebebef;
+  --secondary-foreground: #2b2b36;
+  --muted: #ebebef;
+  /* legacy #6b6d76 is 3.8:1 on #dcdcdc; nudged toward the text colour to reach 4.6:1 */
+  --muted-foreground: #5e5f69;
+  --accent: #ebebef;
+  --accent-foreground: #2b2b36;
+  --destructive: var(--ps-red);
+  --border: #b8b8c0;
+  --input: #b8b8c0;
+  --ring: #006eb8;
+
+  --chart-1: var(--ps-teal);
+  --chart-2: var(--ps-red);
+  --chart-3: var(--ps-blue);
+  --chart-4: var(--ps-yellow);
+  --chart-5: var(--ps-pink);
+
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  --radius: 0.625rem;
+
+  /* Dot grid + hero gradient stops */
+  --dot-color: color-mix(in oklab, var(--foreground) 9%, transparent);
+  --hero-1: #dcdcdc;
+  --hero-2: #ebebef;
+  --hero-3: #b8b8c0;
+
+  color-scheme: light;
+}
+
+/* Dark: navy-black (default) */
+.dark {
+  --ps-blue: #2a69f0;
+  --ps-teal-ink: #01aea0;
+  --ps-red-ink: #fd4b62;
+  --ps-blue-ink: #6894f3;
+  --ps-yellow-ink: #ffc501;
+
+  --background: #0a0a12;
+  --foreground: #f8f9fa;
+  --card: #16213e;
+  --card-foreground: #f8f9fa;
+  --popover: #16213e;
+  --popover-foreground: #f8f9fa;
+  --primary: #2a69f0;
+  --primary-hover: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #16213e;
+  --secondary-foreground: #f8f9fa;
+  --muted: #16213e;
+  --muted-foreground: #a6cdef;
+  --accent: #16213e;
+  --accent-foreground: #f8f9fa;
+  --border: #2a3b5c;
+  --input: #2a3b5c;
+  --ring: #2a69f0;
+
+  --dot-color: color-mix(in oklab, var(--foreground) 7%, transparent);
+  --hero-1: #0a0a12;
+  --hero-2: #16213e;
+  --hero-3: #2a3b5c;
+
+  color-scheme: dark;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    /* Keep anchored sections clear of the fixed navbar. */
+    scroll-padding-top: 5rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Full-bleed decorations (hero gradient) must not cause sideways scroll. */
+    overflow-x: clip;
+  }
+  /* Sanyi-style dot grid across the whole page, fixed behind content. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* PS theme utilities                                                  */
+/* ------------------------------------------------------------------ */
+
+/* Animated hero backdrop (port of .banner-wrap::before), fading out at the bottom.
+   The legacy effect animated background-position on a 400%-wide gradient, which repaints
+   every frame. Here a 400%-wide layer is translated instead (compositor-only, same look). */
+@utility hero-gradient {
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, black 55%, transparent);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 400%;
+    background-image: linear-gradient(
+      120deg,
+      var(--hero-1) 0%,
+      var(--hero-2) 20%,
+      var(--hero-3) 40%,
+      var(--hero-2) 60%,
+      var(--hero-1) 100%
+    );
+    animation: var(--animate-gradient-shift);
+    will-change: transform;
+  }
+}
+
+/* Scroll progress bar: teal → red → blue → yellow. */
+@utility ps-gradient-x {
+  background-image: linear-gradient(90deg, var(--ps-teal), var(--ps-red), var(--ps-blue), var(--ps-yellow));
+}
+
+/* CSS twin of <BlurFade> for above-the-fold content (no wait for hydration). */
+@utility animate-blur-fade {
+  animation: blur-fade 0.45s ease-out both;
+}
+
+@keyframes blur-fade {
+  /* Starts just above 0: Chrome skips LCP candidates whose first paint is fully transparent. */
+  from {
+    opacity: 0.1;
+    filter: blur(6px);
+    transform: translateY(6px);
+  }
+}
+
+@utility animate-caret {
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes ps-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes gradient-shift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-75%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient::before,
+  .animate-ps-float,
+  .animate-blur-fade,
+  .animate-caret {
+    animation: none !important;
+  }
+}

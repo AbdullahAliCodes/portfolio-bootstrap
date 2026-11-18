@@ -1,56 +1,31 @@
-# Abdullah Ali Portfolio (Bootstrap)
+# Abdullah Ali: portfolio
 
-A responsive, two-page personal portfolio built with Bootstrap 5, custom theme tokens, and lightweight vanilla JavaScript interactions.
+Personal portfolio: a single-column, Sanyi-inspired layout with a retro PlayStation (PS1) theme.
 
-## Live Scope
+- **Stack:** Next.js (App Router, Cache Components) · TypeScript · Tailwind CSS v4 · shadcn/ui (Base UI) · motion · next-themes
+- **Content:** everything lives in [`src/data/portfolio.ts`](src/data/portfolio.ts)
+- **Theme:** PS palette tokens in [`src/app/globals.css`](src/app/globals.css); PS primitives in [`src/components/ps`](src/components/ps)
 
-- **Home page:** hero, about, contact sections (`index.html`)
-- **Projects page:** categorized portfolio cards with client-side filtering (`projects.html`)
-- **Shared logic:** dark/light theme persistence, nav behavior, project thumbnail switching, typing effect (`script.js`)
-- **Shared styling:** token-driven theme system + component styling (`cover.css`)
+## Develop
 
-## Why This Project Exists
-
-This portfolio is designed to showcase projects, communicate personal brand, and provide a fast, no-build static site that is easy to deploy and maintain.
-
-## Core Features
-
-- Persistent **light/dark mode** with `localStorage`
-- Theme-aware UI updates:
-  - Bootstrap theme attribute (`data-bs-theme`)
-  - Browser UI color (`meta[name="theme-color"]`)
-  - Project card thumbnails swapped per theme
-- Responsive navbar:
-  - Collapses on mobile
-  - Auto-closes when a nav link is selected
-  - Gains a docked/scrolled style after leaving hero section
-- Hero typing effect with `typed.js`
-- Project filtering (`All`, `Foundational`, `Capstone`) without reloading
-- Consistent visual system powered by CSS custom properties
-
-## Tech Stack
-
-- **HTML5**
-- **CSS3** (custom properties + Bootstrap overrides)
-- **JavaScript (ES6+)**
-- **Bootstrap 5.3**
-- **Bootstrap Icons**
-- **Typed.js** (CDN)
-
-## Project Structure
-
-```text
-portfolio-bootstrap/
-├── index.html               # Home page (hero/about/contact)
-├── projects.html            # Projects listing + filters
-├── cover.css                # Global styles + theme tokens + sections
-├── script.js                # Theme, interactions, filtering, typed text
-├── assets/
-│   ├── dist/                # Local Bootstrap distribution
-│   │   ├── css/
-│   │   └── js/
-│   ├── fonts/               # Custom fonts (Nova Klasse + others)
-│   ├── images/              # Headshots + project thumbnails
-│   └── brand/               # Bootstrap brand assets
-└── .vscode/                 # Local editor settings
+```bash
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build && npm run start
 ```
+
+## Deploy
+
+Set `NEXT_PUBLIC_SITE_URL` (e.g. `https://your-domain.com`) so metadata, `sitemap.xml` and `robots.txt` use the real domain. On Vercel the production URL is picked up automatically if it's not set.
+
+## Structure
+
+```
+src/app/            routes: / , /projects, not-found, OG image, icons, sitemap, robots
+src/components/     layout/ (navbar, dock, footer…), sections/ (home), ps/ (PS symbols), ui/ (shadcn)
+src/data/           portfolio.ts: all copy and links
+legacy/             the previous Bootstrap site, kept for reference until the new one is approved
+```
+
+Conventions for contributors (and AI agents) are in [CLAUDE.md](CLAUDE.md).
