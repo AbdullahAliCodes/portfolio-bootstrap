@@ -60,6 +60,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      // globals.css enables smooth scrolling; this lets Next.js turn it off during route changes.
+      data-scroll-behavior="smooth"
       // next-themes sets the theme class on <html> before hydration.
       suppressHydrationWarning
       className={`${inter.variable} ${novaKlasse.variable} h-full antialiased`}
@@ -71,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Providers>
           <a
             href="#main"
-            className="fixed left-4 top-3 z-[70] -translate-y-16 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition-transform focus-visible:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            className="fixed left-4 top-3 z-70 -translate-y-16 rounded-lg bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition-transform focus-visible:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
           >
             Skip to content
           </a>

@@ -67,7 +67,6 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
   /* PS animations (gated with motion-safe: in components) */
-  --animate-ps-float: ps-float 2s ease-in-out infinite;
   --animate-gradient-shift: gradient-shift 4s ease infinite alternate;
 }
 
@@ -281,16 +280,6 @@
   }
 }
 
-@keyframes ps-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
 @keyframes gradient-shift {
   from {
     transform: translateX(0);
@@ -302,7 +291,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-gradient::before,
-  .animate-ps-float,
   .animate-blur-fade,
   .animate-caret {
     animation: none !important;
