@@ -41,7 +41,6 @@ export type Profile = {
 export type SkillGroup = {
   title: string;
   description: string;
-  shape: PsShape;
   /** Tech names; icons resolved in components/tech-chip.tsx. */
   items: string[];
   /** Non-tool concepts, rendered as plain chips. */
@@ -160,26 +159,22 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
     description: "Interfaces, components and styling for the web.",
-    shape: "triangle",
     items: ["React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Chakra UI"],
   },
   {
     title: "Backend",
     description: "Servers, APIs and third-party integrations.",
-    shape: "circle",
     items: ["Node.js", "Express", "Python", "REST APIs", "Gemini API"],
     concepts: ["OOP"],
   },
   {
     title: "Database & data",
     description: "Storing, querying and syncing application data.",
-    shape: "cross",
     items: ["Supabase", "PostgreSQL", "Firebase"],
   },
   {
     title: "Tools & platforms",
     description: "Version control, deployment, auth, payments and CMS.",
-    shape: "square",
     items: ["Git", "Vercel", "Render", "Azure", "Auth0", "Paystack", "WordPress", "Elementor"],
   },
 ];

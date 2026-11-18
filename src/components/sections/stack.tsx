@@ -1,4 +1,3 @@
-import { PsSymbol } from "@/components/ps";
 import { Section } from "@/components/section";
 import { TechChip } from "@/components/tech-chip";
 import { sections, skillGroups } from "@/data/portfolio";
@@ -12,10 +11,7 @@ export function Stack({ index = 0 }: { index?: number }) {
             key={group.title}
             className="surface-card p-6 sm:p-7"
           >
-            <h3 className="flex items-center gap-2.5 text-base font-semibold sm:text-lg">
-              <PsSymbol shape={group.shape} size={13} strokeWidth={3.25} />
-              {group.title}
-            </h3>
+            <h3 className="text-base font-semibold sm:text-lg">{group.title}</h3>
             <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground sm:text-base">{group.description}</p>
             <ul className="mt-5 flex flex-wrap gap-2">
               {group.items.map((t) => (
