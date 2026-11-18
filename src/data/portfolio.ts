@@ -88,7 +88,7 @@ export type NavKey = "home" | "about" | "projects" | "contact";
 export type NavItem = {
   key: NavKey;
   label: string;
-  /** In-page anchor on the home page. */
+  /** Where the link goes: an in-page anchor on the home page, or a route. */
   href: string;
   shape: PsShape;
 };
@@ -115,7 +115,7 @@ export const site = {
 export const nav: NavItem[] = [
   { key: "home", label: "Home", href: "/#home", shape: "triangle" },
   { key: "about", label: "About", href: "/#about", shape: "circle" },
-  { key: "projects", label: "Projects", href: "/#projects", shape: "cross" },
+  { key: "projects", label: "Projects", href: "/projects", shape: "cross" },
   { key: "contact", label: "Contact", href: "/#contact", shape: "square" },
 ];
 
